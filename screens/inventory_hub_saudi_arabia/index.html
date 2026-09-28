@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OmniSync | Inventory &amp; Forecast Hub (Saudi Arabia)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#a06500",
+                    "surface": "#0b1326",
+                    "inverse-surface": "#dae2fd",
+                    "on-surface-variant": "#c2c6d8",
+                    "on-background": "#dae2fd",
+                    "surface-container-low": "#131b2e",
+                    "primary": "#b3c5ff",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffddb8",
+                    "surface-container-high": "#222a3d",
+                    "on-tertiary-fixed": "#2a1700",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "on-error": "#690005",
+                    "on-surface": "#dae2fd",
+                    "on-primary-container": "#f8f7ff",
+                    "surface-container-lowest": "#060e20",
+                    "outline-variant": "#424656",
+                    "background": "#0b1326",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-primary-fixed-variant": "#003fa4",
+                    "on-secondary-fixed-variant": "#005236",
+                    "primary-fixed": "#dae1ff",
+                    "primary-container": "#0066ff",
+                    "on-secondary-fixed": "#002113",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "on-tertiary": "#472a00",
+                    "on-secondary": "#003824",
+                    "surface-tint": "#b3c5ff",
+                    "secondary": "#4edea3",
+                    "surface-bright": "#31394d",
+                    "surface-variant": "#2d3449",
+                    "surface-container-highest": "#2d3449",
+                    "surface-container": "#171f33",
+                    "on-secondary-container": "#00311f",
+                    "error": "#ffb4ab",
+                    "on-primary-fixed": "#001849",
+                    "inverse-on-surface": "#283044",
+                    "on-primary": "#002b75",
+                    "on-tertiary-container": "#fff7f1",
+                    "tertiary": "#ffb95f",
+                    "primary-fixed-dim": "#b3c5ff",
+                    "inverse-primary": "#0054d6",
+                    "secondary-container": "#00a572",
+                    "outline": "#8c90a1",
+                    "error-container": "#93000a",
+                    "surface-dim": "#0b1326",
+                    "secondary-fixed": "#6ffbbe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "margin-mobile": "16px",
+                    "unit": "4px",
+                    "gutter": "16px",
+                    "margin-desktop": "32px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "data-tabular": ["JetBrains Mono"],
+                    "body-md": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "headline-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "data-tabular": ["13px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-caps": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #020617; /* Base Level 0 */
+            color: #dae2fd;
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid #1e293b;
+            backdrop-filter: blur(24px) saturate(150%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 10px;
+        }
+        @keyframes subtle-glow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+        }
+        .glow-pulse {
+            animation: subtle-glow 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-body-md overflow-hidden">
+<!-- Side Navigation Shell -->
+<aside class="fixed left-0 top-0 h-screen w-[240px] border-r border-outline-variant bg-surface-container/80 backdrop-blur-3xl shadow-sm flex flex-col p-4 z-[60]">
+<div class="mb-8 px-4">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">OmniSync</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant opacity-60">Saudi Arabia</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 bg-primary-container text-on-primary-container rounded-lg active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">hub</span>
+<span class="font-body-md">Marketplaces</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto p-4 bg-surface-container-low rounded-xl border border-outline-variant/30">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">W</div>
+<div class="overflow-hidden">
+<p class="text-[12px] font-bold truncate">Kingdom Hub</p>
+<p class="text-[10px] text-on-surface-variant">Enterprise Tier</p>
+</div>
+</div>
+<button class="w-full py-2 bg-surface-variant hover:bg-surface-container-high text-on-surface text-[12px] font-bold rounded transition-all active:scale-95">
+                Switch Region
+            </button>
+</div>
+</aside>
+<!-- Top App Bar -->
+<header class="fixed top-0 right-0 left-[240px] z-50 flex justify-between items-center px-margin-desktop h-16 border-b border-outline-variant backdrop-blur-3xl bg-surface/80 shadow-md">
+<div class="flex items-center gap-4 flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary rounded-lg pl-10 pr-4 py-1.5 text-body-md outline-none transition-all" placeholder="Search SKUs, ASINs, or warehouses..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-opacity cursor-pointer">filter_list</button>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-opacity cursor-pointer">sync</button>
+<div class="relative">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-opacity cursor-pointer">notifications</button>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</div>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant"></div>
+<div class="flex items-center gap-3 cursor-pointer group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-opacity text-3xl">account_circle</span>
+<div class="hidden lg:block text-right">
+<p class="text-body-md font-bold leading-tight">Saudi Admin</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">KSA Operations</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-[240px] pt-16 h-screen overflow-y-auto custom-scrollbar bg-surface">
+<div class="p-margin-desktop space-y-gutter">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-display-lg text-display-lg text-on-surface tracking-tighter">KSA Inventory Hub</h2>
+<p class="font-body-lg text-on-surface-variant max-w-lg">Localized forecasting and fulfillment orchestration for the Kingdom of Saudi Arabia.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 bg-surface-container-high border border-outline-variant text-on-surface font-bold text-body-md rounded hover:bg-surface-variant transition-all active:scale-95">Export (ZATCA Format)</button>
+<button class="px-6 py-2.5 bg-primary-container text-on-primary-container font-bold text-body-md rounded hover:opacity-90 shadow-lg shadow-primary-container/20 transition-all active:scale-95">Create Purchase Order</button>
+</div>
+</div>
+<!-- Bento Grid: Top Stats -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Total Units -->
+<div class="glass-panel p-6 rounded-xl flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-on-surface-variant">TOTAL UNITS</span>
+<span class="material-symbols-outlined text-primary">inventory</span>
+</div>
+<div class="mt-4">
+<h3 class="font-headline-md text-headline-md font-bold font-data-tabular">842,150</h3>
+<p class="text-[12px] text-secondary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +12.5% vs last month
+                        </p>
+</div>
+</div>
+<!-- Low Stock Alerts -->
+<div class="glass-panel p-6 rounded-xl border-l-4 border-l-tertiary">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-tertiary">LOW STOCK ALERTS</span>
+<span class="material-symbols-outlined text-tertiary">warning</span>
+</div>
+<div class="mt-4">
+<h3 class="font-headline-md text-headline-md font-bold font-data-tabular">28 SKUs</h3>
+<p class="text-[12px] text-on-surface-variant mt-1">Critical for Riyadh DC</p>
+</div>
+</div>
+<!-- Out of Stock -->
+<div class="glass-panel p-6 rounded-xl border-l-4 border-l-error">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-error">OUT OF STOCK</span>
+<span class="material-symbols-outlined text-error">dangerous</span>
+</div>
+<div class="mt-4">
+<h3 class="font-headline-md text-headline-md font-bold font-data-tabular">7 SKUs</h3>
+<p class="text-[12px] text-on-surface-variant mt-1">Daily revenue loss: 45,000 SAR</p>
+</div>
+</div>
+<!-- Marketplaces -->
+<div class="glass-panel p-6 rounded-xl overflow-hidden relative">
+<div class="relative z-10">
+<span class="font-label-caps text-on-surface-variant">KSA CHANNELS</span>
+<div class="mt-4 flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-container-high flex items-center justify-center font-bold text-[10px] text-primary" title="Amazon.sa">AMZ.SA</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-container-high flex items-center justify-center font-bold text-[10px] text-secondary" title="Noon KSA">NOON</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-container-high flex items-center justify-center font-bold text-[10px] text-tertiary" title="Salla">SLLA</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-container-high flex items-center justify-center font-bold text-[10px] text-on-surface-variant">+3</div>
+</div>
+<p class="text-[12px] text-on-surface-variant mt-4 font-data-tabular">Local Uptime: 99.9%</p>
+</div>
+</div>
+</div>
+<!-- Main Insights Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Inventory Forecast Bar Chart -->
+<div class="lg:col-span-8 glass-panel p-8 rounded-2xl">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Predictive Stock-Out Forecast</h4>
+<p class="text-body-md text-on-surface-variant">Days remaining for high-velocity SKUs in Saudi warehouses.</p>
+</div>
+<select class="bg-surface-container-lowest border-outline-variant text-body-md rounded p-1">
+<option>Next 30 Days</option>
+<option>Next 90 Days</option>
+</select>
+</div>
+<div class="h-[300px] flex items-end justify-between gap-4 px-2">
+<!-- Bar 1 -->
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-error/20 rounded-t-sm relative transition-all duration-500 hover:bg-error/40 h-[10%]">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-surface-container-highest px-2 py-1 rounded text-[10px] font-bold hidden group-hover:block whitespace-nowrap z-20">SKU-RUH-01: 3 Days</div>
+</div>
+<p class="font-label-caps text-[9px] mt-4 opacity-60 rotate-45 lg:rotate-0">RUH-01</p>
+</div>
+<!-- Bar 2 -->
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-tertiary/20 rounded-t-sm relative transition-all duration-500 hover:bg-tertiary/40 h-[25%]"></div>
+<p class="font-label-caps text-[9px] mt-4 opacity-60 rotate-45 lg:rotate-0">JED-04</p>
+</div>
+<!-- Bar 3 -->
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-secondary/20 rounded-t-sm relative transition-all duration-500 hover:bg-secondary/40 h-[65%]"></div>
+<p class="font-label-caps text-[9px] mt-4 opacity-60 rotate-45 lg:rotate-0">DMM-02</p>
+</div>
+<!-- Bar 4 -->
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-primary/20 rounded-t-sm relative transition-all duration-500 hover:bg-primary/40 h-[90%]"></div>
+<p class="font-label-caps text-[9px] mt-4 opacity-60 rotate-45 lg:rotate-0">RUH-03</p>
+</div>
+<!-- Bar 5 -->
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-secondary/20 rounded-t-sm relative transition-all duration-500 hover:bg-secondary/40 h-[45%]"></div>
+<p class="font-label-caps text-[9px] mt-4 opacity-60 rotate-45 lg:rotate-0">JED-02</p>
+</div>
+<!-- Bar 6 -->
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-tertiary/20 rounded-t-sm relative transition-all duration-500 hover:bg-tertiary/40 h-[15%]"></div>
+<p class="font-label-caps text-[9px] mt-4 opacity-60 rotate-45 lg:rotate-0">RUH-02</p>
+</div>
+</div>
+<div class="mt-12 flex gap-6 border-t border-outline-variant/30 pt-6">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="text-[11px] font-label-caps opacity-80">Critical ( &lt; 5 days )</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-[11px] font-label-caps opacity-80">Warning ( 5-15 days )</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-[11px] font-label-caps opacity-80">Healthy ( &gt; 15 days )</span>
+</div>
+</div>
+</div>
+<!-- Warehouse Heatmap (Saudi Arabia Focus) -->
+<div class="lg:col-span-4 glass-panel p-6 rounded-2xl flex flex-col h-full">
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-4">KSA Distribution Map</h4>
+<div class="flex-1 bg-surface-container-lowest rounded-xl relative overflow-hidden min-h-[300px]">
+<div class="absolute inset-0 grayscale opacity-40 mix-blend-overlay">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCY-GiKq6XfImhJhoe3dfM9TDQk5UHKODHlrC7mOkM-5DM0-TWk1vGnv7KHhepfPi3CvxHBNEFmTOF0uwWJB0MwuCB2FIUZKmpOB0h2h3xemj4H5trrnz6wb4dgs5kA6bQIW6ifKYDIReRK9BjGcocqBrlwJ-Sz11gDN8vCiAuH_3lGR6FfIVWskjHhWRen1KHe5WA0kqjardYazSZCgJ2wXSpKQ0BTktWY9-xtT03oIhcWIJI_CIzBXQzAVrElyAcoJ7a7uOalMWNk')"></div>
+</div>
+<!-- Heatmap Overlay Effect (Localized to Arabian Peninsula) -->
+<div class="absolute top-[48%] left-[51%] w-16 h-16 bg-primary/40 rounded-full blur-xl glow-pulse"></div> <!-- Riyadh Area -->
+<div class="absolute top-[55%] left-[45%] w-12 h-12 bg-secondary/30 rounded-full blur-xl glow-pulse"></div> <!-- Jeddah Area -->
+<div class="absolute top-[45%] left-[54%] w-10 h-10 bg-error/40 rounded-full blur-lg glow-pulse"></div> <!-- Eastern Province -->
+<!-- Location Nodes -->
+<div class="absolute top-[48%] left-[51%] flex flex-col items-center group cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div class="absolute top-full bg-surface-container-high p-2 rounded border border-outline-variant text-[10px] hidden group-hover:block z-20 shadow-xl">
+<strong>Central (RUH-01)</strong><br/>Capacity: 92%
+                            </div>
+</div>
+<div class="absolute top-[55%] left-[45%] flex flex-col items-center group cursor-pointer">
+<span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div class="absolute top-full bg-surface-container-high p-2 rounded border border-outline-variant text-[10px] hidden group-hover:block z-20 shadow-xl">
+<strong>West (JED-03)</strong><br/>Capacity: 68%
+                            </div>
+</div>
+<div class="absolute top-[45%] left-[54%] flex flex-col items-center group cursor-pointer">
+<span class="material-symbols-outlined text-error text-[20px]" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div class="absolute top-full bg-surface-container-high p-2 rounded border border-outline-variant text-[10px] hidden group-hover:block z-20 shadow-xl">
+<strong>East (DMM-01)</strong><br/>Capacity: 98%
+                            </div>
+</div>
+</div>
+<div class="mt-4 space-y-2">
+<div class="flex justify-between items-center text-[12px]">
+<span class="text-on-surface-variant">Riyadh Central Region</span>
+<span class="font-data-tabular font-bold">412,000 units</span>
+</div>
+<div class="w-full h-1 bg-surface-variant rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[49%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Actionable Insights & SKU Table -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Replenishment Cards -->
+<div class="lg:col-span-4 space-y-gutter">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Localized Actions</h4>
+<div class="glass-panel p-5 rounded-xl border-l-4 border-l-primary hover:border-l-secondary transition-all cursor-pointer">
+<div class="flex justify-between mb-2">
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase">AMAZON.SA</span>
+<span class="text-[11px] text-on-surface-variant font-data-tabular">ASIN: B08X1W9Z</span>
+</div>
+<p class="font-body-md font-bold text-on-surface">Replenish 'OmniPro Wireless Earbuds'</p>
+<p class="text-[12px] text-on-surface-variant mt-1">Forecasted stock-out: 4 days in Riyadh. Suggest 5,000 units.</p>
+<button class="mt-4 w-full py-2 bg-primary/10 hover:bg-primary/20 text-primary font-bold text-[12px] rounded transition-all">Confirm Shipment</button>
+</div>
+<div class="glass-panel p-5 rounded-xl border-l-4 border-l-tertiary">
+<div class="flex justify-between mb-2">
+<span class="bg-tertiary/10 text-tertiary text-[10px] font-bold px-2 py-0.5 rounded uppercase">NOON KSA</span>
+<span class="text-[11px] text-on-surface-variant font-data-tabular">SKU: NOON-RUH-77</span>
+</div>
+<p class="font-body-md font-bold text-on-surface">Inventory Transfer: Jeddah to Riyadh</p>
+<p class="text-[12px] text-on-surface-variant mt-1">High demand spike detected for Ramadan sale. Rebalance 2,000 units.</p>
+<button class="mt-4 w-full py-2 bg-tertiary/10 hover:bg-tertiary/20 text-tertiary font-bold text-[12px] rounded transition-all">Initiate Transfer</button>
+</div>
+</div>
+<!-- SKU Matrix -->
+<div class="lg:col-span-8 glass-panel rounded-2xl overflow-hidden flex flex-col">
+<div class="p-6 flex justify-between items-center border-b border-outline-variant">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">KSA Inventory Matrix</h4>
+<div class="flex gap-2">
+<button class="p-1.5 hover:bg-surface-variant rounded transition-colors"><span class="material-symbols-outlined text-[20px]">tune</span></button>
+<button class="p-1.5 hover:bg-surface-variant rounded transition-colors"><span class="material-symbols-outlined text-[20px]">download</span></button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="p-4 font-label-caps text-on-surface-variant border-b border-outline-variant">PRODUCT / SKU</th>
+<th class="p-4 font-label-caps text-on-surface-variant border-b border-outline-variant">STOCK</th>
+<th class="p-4 font-label-caps text-on-surface-variant border-b border-outline-variant">STATUS</th>
+<th class="p-4 font-label-caps text-on-surface-variant border-b border-outline-variant">30D VELOCITY</th>
+<th class="p-4 font-label-caps text-on-surface-variant border-b border-outline-variant">NET PROFIT (SAR)</th>
+</tr>
+</thead>
+<tbody class="text-body-md divide-y divide-outline-variant/10">
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-high rounded border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">devices</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">OmniPro Wireless 2.0</p>
+<p class="text-[11px] font-data-tabular opacity-60">SKU-KSA-AUD-BK</p>
+</div>
+</div>
+</td>
+<td class="p-4 font-data-tabular">12,402</td>
+<td class="p-4">
+<span class="px-2 py-0.5 rounded-full bg-secondary/10 text-secondary text-[11px] font-bold">OPTIMAL</span>
+</td>
+<td class="p-4 font-data-tabular">450 / day</td>
+<td class="p-4 font-data-tabular text-secondary">+54,220.00</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors group bg-surface-container-lowest/10">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-high rounded border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">bolt</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">FastCharge Hub X</p>
+<p class="text-[11px] font-data-tabular opacity-60">SKU-KSA-PWR-01</p>
+</div>
+</div>
+</td>
+<td class="p-4 font-data-tabular">42</td>
+<td class="p-4">
+<span class="px-2 py-0.5 rounded-full bg-error/10 text-error text-[11px] font-bold">CRITICAL</span>
+</td>
+<td class="p-4 font-data-tabular">120 / day</td>
+<td class="p-4 font-data-tabular text-secondary">+12,500.00</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-high rounded border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">backpack</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Urban Tech Pack</p>
+<p class="text-[11px] font-data-tabular opacity-60">SKU-KSA-LUG-GY</p>
+</div>
+</div>
+</td>
+<td class="p-4 font-data-tabular">0</td>
+<td class="p-4">
+<span class="px-2 py-0.5 rounded-full bg-error text-surface text-[11px] font-black">OUT OF STOCK</span>
+</td>
+<td class="p-4 font-data-tabular">0 / day</td>
+<td class="p-4 font-data-tabular text-error">-8,100.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Micro-interaction Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('OmniSync Inventory Hub (KSA) Initialized');
+            
+            const searchInput = document.querySelector('input[type="text"]');
+            searchInput.addEventListener('focus', () => {
+                searchInput.parentElement.classList.add('scale-[1.01]');
+            });
+            searchInput.addEventListener('blur', () => {
+                searchInput.parentElement.classList.remove('scale-[1.01]');
+            });
+        });
+    </script>
+</body></html>

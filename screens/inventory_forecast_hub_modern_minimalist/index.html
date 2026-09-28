@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OmniSync | Inventory Forecasting</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f7f9fb",
+                        "secondary-fixed": "#d8e3fb",
+                        "outline": "#727687",
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary-fixed": "#d3e4fe",
+                        "surface-dim": "#d8dadc",
+                        "primary-container": "#0066ff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#dae1ff",
+                        "surface": "#f7f9fb",
+                        "inverse-primary": "#b3c5ff",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#d5e0f8",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-background": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary": "#545f73",
+                        "on-surface-variant": "#424656",
+                        "surface-variant": "#e0e3e5",
+                        "outline-variant": "#c2c6d8",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "on-primary-container": "#f8f7ff",
+                        "tertiary": "#4b5a70",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "primary": "#0050cb",
+                        "on-primary-fixed": "#001849",
+                        "tertiary-container": "#63738a",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container": "#eceef0",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#003fa4",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary-container": "#f6f8ff",
+                        "surface-tint": "#0054d6",
+                        "background": "#f7f9fb",
+                        "on-secondary-fixed": "#111c2d",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-secondary-container": "#586377",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#bcc7de"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "xl": "64px",
+                        "lg": "40px",
+                        "sm": "16px",
+                        "xs": "8px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface-bright text-on-surface">
+<!-- SideNavBar (Authority: JSON & Style Guidance) -->
+<aside class="h-screen w-64 fixed left-0 top-0 hidden lg:flex flex-col bg-surface-container-lowest border-r border-outline-variant z-40">
+<div class="p-6">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">OmniSync Pro</h1>
+<p class="font-label-sm text-secondary">Enterprise Plan</p>
+</div>
+<nav class="flex flex-col h-full p-4 gap-2">
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors font-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+            </a>
+<a class="flex items-center gap-3 p-3 bg-secondary-container text-on-secondary-container rounded-lg font-label-md" href="#">
+<span class="material-symbols-outlined">inventory_2</span> Inventory
+            </a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors font-label-md" href="#">
+<span class="material-symbols-outlined">storefront</span> Marketplaces
+            </a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors font-label-md" href="#">
+<span class="material-symbols-outlined">monitoring</span> Analytics
+            </a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors font-label-md" href="#">
+<span class="material-symbols-outlined">settings</span> Settings
+            </a>
+<div class="mt-auto pt-4 border-t border-outline-variant">
+<button class="w-full bg-primary text-on-primary py-3 px-4 rounded-xl font-label-md shadow-md hover:opacity-90 transition-opacity">
+                    Invite Team
+                </button>
+<div class="flex items-center gap-3 mt-6 px-2">
+<img class="w-10 h-10 rounded-full border-2 border-surface" data-alt="A professional studio portrait of a business workspace avatar with a clean, high-key minimalist background, featuring soft neutral tones and professional lighting to evoke a high-trust enterprise software aesthetic for OmniSync's Saudi Arabian market." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7YsWsD1q8a3Go0tpN0kn9TlAqzA4kwgq4RrD04ylm11K8vUBwB6IWDc0HV2CZJJlYKqgJXo5WXEqQllwQ6R7hanWJ85n-_JADx8wzSc4MMaDLWexqAAMe21I9rpkWvUy43Flg0HiVPNXlzsf6PO-NXyZY5kZDZDq_nbusflZyB0y3ca8WRpKpk8h-h74xHZYRr6LY42khehaH1Kq_QVKZf9sXnroCWd0PT8V_hIX-Vnkt1KzO2dJGP15DuJGFqwM7tY9cXBPqg5ey"/>
+<div class="overflow-hidden">
+<p class="font-label-md truncate">Ahmad K.</p>
+<p class="font-label-sm text-secondary truncate">KSA Operations</p>
+</div>
+</div>
+</div>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="lg:ml-64 min-h-screen">
+<!-- TopAppBar (Authority: JSON & Style Guidance) -->
+<header class="fixed top-0 right-0 left-0 lg:left-64 z-30 bg-surface/80 backdrop-blur-xl shadow-[0px_10px_30px_rgba(30,41,59,0.04)]">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-xl pl-10 pr-4 py-2 focus:ring-2 focus:ring-primary/20 text-body-sm" placeholder="Search SKUs or warehouses..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">groups</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant mx-2"></div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-primary font-bold">KSA-East-1</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Page Canvas -->
+<div class="pt-24 px-gutter pb-xl max-w-container-max mx-auto grid grid-cols-12 gap-gutter">
+<!-- Header Section -->
+<div class="col-span-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Inventory Forecasting</h2>
+<p class="font-body-md text-secondary">Advanced predictive stock planning for Amazon.sa, Noon, and Trendyol.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-outline-variant bg-surface hover:bg-surface-container-low transition-all font-label-md">
+<span class="material-symbols-outlined">download</span> Export
+                    </button>
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-primary text-on-primary shadow-lg shadow-primary/20 hover:scale-[0.98] transition-all font-label-md">
+<span class="material-symbols-outlined">shopping_cart_checkout</span> Bulk Reorder
+                    </button>
+</div>
+</div>
+<!-- Bento Stats Grid -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-lowest p-gutter rounded-xl shadow-[0px_10px_30px_rgba(30,41,59,0.04)] flex flex-col justify-between border border-outline-variant/30">
+<div class="flex justify-between items-start">
+<div class="p-3 bg-secondary-container/30 rounded-xl">
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<span class="text-label-sm font-label-sm px-2 py-1 bg-primary-container/10 text-primary-container rounded">AI Analysis</span>
+</div>
+<div class="mt-6">
+<h4 class="font-label-md text-secondary">Avg. Weeks of Cover</h4>
+<p class="font-display-lg text-display-lg mt-1">4.2 <span class="text-headline-md font-headline-md text-secondary">wks</span></p>
+<div class="flex items-center gap-2 mt-2 text-error font-label-sm">
+<span class="material-symbols-outlined text-sm">trending_down</span> -12% vs last month
+                    </div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 bg-surface-container-lowest p-gutter rounded-xl shadow-[0px_10px_30px_rgba(30,41,59,0.04)] border border-outline-variant/30">
+<div class="flex justify-between items-start">
+<div class="p-3 bg-error-container/20 rounded-xl">
+<span class="material-symbols-outlined text-error">warning</span>
+</div>
+<span class="text-label-sm font-label-sm px-2 py-1 bg-error-container/20 text-on-error-container rounded">Critical</span>
+</div>
+<div class="mt-6">
+<h4 class="font-label-md text-secondary">Projected Stock-Outs</h4>
+<p class="font-display-lg text-display-lg mt-1">18 <span class="text-headline-md font-headline-md text-secondary">SKUs</span></p>
+<p class="font-body-sm text-secondary mt-2">Est. Revenue Loss: <span class="font-bold text-on-surface">SAR 124.5k</span></p>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 bg-primary-container p-gutter rounded-xl shadow-[0px_20px_40px_rgba(0,102,255,0.15)] text-on-primary-container relative overflow-hidden">
+<div class="relative z-10 h-full flex flex-col justify-between">
+<div>
+<h4 class="font-label-md opacity-80">AI Reorder Suggestion</h4>
+<p class="font-headline-md text-headline-md mt-2">Restock 14 Top Performers</p>
+<p class="font-body-sm mt-1 opacity-90">Prevent stock-out before White Friday peak.</p>
+</div>
+<button class="mt-6 w-full py-3 bg-surface-container-lowest text-primary font-bold rounded-xl hover:bg-white transition-colors">
+                        Review Recommendations
+                    </button>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10 scale-150">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</div>
+<!-- Forecast Chart Area -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest p-gutter rounded-xl shadow-[0px_10px_30px_rgba(30,41,59,0.04)] border border-outline-variant/30">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+<h3 class="font-headline-md text-headline-md">Demand Forecast</h3>
+<div class="flex gap-2 bg-surface-container-low p-1 rounded-lg">
+<button class="px-3 py-1.5 text-label-sm font-label-sm rounded-md bg-white shadow-sm">Ramadan</button>
+<button class="px-3 py-1.5 text-label-sm font-label-sm rounded-md hover:bg-surface-variant transition-colors">White Friday</button>
+<button class="px-3 py-1.5 text-label-sm font-label-sm rounded-md hover:bg-surface-variant transition-colors">Standard</button>
+</div>
+</div>
+<!-- Simplified Chart Visualization -->
+<div class="h-64 flex items-end justify-between gap-2 px-2 relative">
+<!-- Grid Lines -->
+<div class="absolute inset-0 flex flex-col justify-between opacity-5 pointer-events-none">
+<div class="border-b border-on-surface w-full"></div>
+<div class="border-b border-on-surface w-full"></div>
+<div class="border-b border-on-surface w-full"></div>
+<div class="border-b border-on-surface w-full"></div>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/20 hover:bg-primary/30 transition-all rounded-t-lg h-24 relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">1.2k</div>
+</div>
+<span class="font-label-sm text-[10px] text-secondary">Sep</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/20 hover:bg-primary/30 transition-all rounded-t-lg h-32"></div>
+<span class="font-label-sm text-[10px] text-secondary">Oct</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary rounded-t-lg h-48 relative shadow-lg shadow-primary/20">
+<div class="absolute top-2 left-1/2 -translate-x-1/2 text-[10px] font-bold text-on-primary">WF</div>
+</div>
+<span class="font-label-sm text-[10px] text-primary font-bold">Nov</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/20 hover:bg-primary/30 transition-all rounded-t-lg h-40"></div>
+<span class="font-label-sm text-[10px] text-secondary">Dec</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/20 hover:bg-primary/30 transition-all rounded-t-lg h-28"></div>
+<span class="font-label-sm text-[10px] text-secondary">Jan</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/20 hover:bg-primary/30 transition-all rounded-t-lg h-36"></div>
+<span class="font-label-sm text-[10px] text-secondary">Feb</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-tertiary-container/40 rounded-t-lg h-56 border-2 border-dashed border-primary relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] px-2 py-1 rounded">Forecast</div>
+</div>
+<span class="font-label-sm text-[10px] text-primary font-bold">Mar*</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-tertiary-container/20 rounded-t-lg h-44 border-2 border-dashed border-primary/40"></div>
+<span class="font-label-sm text-[10px] text-secondary">Apr*</span>
+</div>
+</div>
+</div>
+<!-- Team Notes Sidebar (Collaborative) -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-lowest p-gutter rounded-xl shadow-[0px_10px_30px_rgba(30,41,59,0.04)] border border-outline-variant/30 flex flex-col max-h-[440px]">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">chat_bubble</span>
+<h3 class="font-label-md font-bold">Team Planning</h3>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar pr-2 space-y-6">
+<div class="flex gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center font-label-sm text-on-secondary-container shrink-0">SA</div>
+<div>
+<p class="font-label-sm text-on-surface"><strong>Sami Al-Farsi</strong> <span class="text-secondary ml-1 font-normal">2h ago</span></p>
+<p class="text-body-sm mt-1 text-secondary">@Ahmad, we need to increase lead time for the Electronics category. Shipments from Shenzhen are delayed by 5 days.</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center font-label-sm text-on-primary-container shrink-0">AK</div>
+<div>
+<p class="font-label-sm text-on-surface"><strong>Ahmad K.</strong> <span class="text-secondary ml-1 font-normal">1h ago</span></p>
+<p class="text-body-sm mt-1 text-secondary">Noted. Adjusting the buffer in the planning grid now.</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center font-label-sm text-on-tertiary-fixed shrink-0">LM</div>
+<div>
+<p class="font-label-sm text-on-surface"><strong>Laila M.</strong> <span class="text-secondary ml-1 font-normal">Just now</span></p>
+<p class="text-body-sm mt-1 text-secondary">Should we bulk order the 'Eco-Flask' SKU? It's trending on Noon.</p>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant">
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-2 text-body-sm pr-10" placeholder="Add a note or mention..." type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 text-primary">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Stock Planning Grid -->
+<div class="col-span-12 bg-surface-container-lowest rounded-xl shadow-[0px_10px_30px_rgba(30,41,59,0.04)] border border-outline-variant/30 overflow-hidden">
+<div class="p-gutter border-b border-outline-variant/30 flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md">Stock Planning Grid</h3>
+<div class="flex gap-2">
+<div class="flex items-center gap-2 px-3 py-1.5 border border-outline-variant rounded-lg font-label-sm">
+<span class="w-2 h-2 rounded-full bg-error"></span> Critical
+                        </div>
+<div class="flex items-center gap-2 px-3 py-1.5 border border-outline-variant rounded-lg font-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Optimal
+                        </div>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/30">
+<th class="px-gutter py-4 font-label-sm text-secondary uppercase tracking-wider">Product / SKU</th>
+<th class="px-gutter py-4 font-label-sm text-secondary uppercase tracking-wider">Current Stock</th>
+<th class="px-gutter py-4 font-label-sm text-secondary uppercase tracking-wider">Weeks of Cover</th>
+<th class="px-gutter py-4 font-label-sm text-secondary uppercase tracking-wider">Lead Time</th>
+<th class="px-gutter py-4 font-label-sm text-secondary uppercase tracking-wider">Status</th>
+<th class="px-gutter py-4 font-label-sm text-secondary uppercase tracking-wider">AI Suggestion</th>
+<th class="px-gutter py-4"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-gutter py-5">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-variant flex items-center justify-center">
+<img class="w-10 h-10 object-contain" data-alt="A minimalist high-end product photo of a sleek digital device for a modern ecommerce inventory interface, shot in soft diffuse studio lighting on a pristine white background, representing the 'Omni-Pod Pro' tech item." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDahoTvhSFEg0WGgrzMBJ3MrTgtaBbQ1KhDvt8KuHAHpzX_dBSRXqK7p6c18BIBWOuW6wh0voT4R9jm_xTcXFDnnHbrOooXnc4bcpLuadFkL6fiOmf2J7NDiuXehAWpvq2gTjkxs-5dEXNHnGZuzuLJ87m1CMnOYSIF3nQWXbbowHOr72w41CLsg8IwcgwWstkjOGiMl1Qb6QnB-HIyTdIVFY2GCL7CCRKyRcgouBdDRVjDoSmGMhhDSxH7byP6LQSp8ySsKpT-fHu"/>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Omni-Pod Pro Max</p>
+<p class="text-[10px] text-secondary">SKU: OP-MAX-99-B</p>
+</div>
+</div>
+</td>
+<td class="px-gutter py-5">
+<div class="flex items-center gap-2">
+<div class="w-24 h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="w-[85%] h-full bg-primary"></div>
+</div>
+<span class="font-body-sm text-on-surface">842</span>
+</div>
+</td>
+<td class="px-gutter py-5 font-body-sm">6.2 wks</td>
+<td class="px-gutter py-5 font-body-sm">14 days</td>
+<td class="px-gutter py-5">
+<span class="px-2 py-1 bg-secondary-container/50 text-on-secondary-container text-[11px] font-bold rounded-lg uppercase">Optimal</span>
+</td>
+<td class="px-gutter py-5">
+<span class="text-body-sm text-secondary italic">No Action Needed</span>
+</td>
+<td class="px-gutter py-5 text-right">
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-all">
+<span class="material-symbols-outlined text-outline">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-gutter py-5">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-variant flex items-center justify-center">
+<img class="w-10 h-10 object-contain" data-alt="A studio photograph of a premium minimalist lifestyle accessory, possibly an insulated water bottle or sleek home essential, lit with clean professional lighting on a neutral grey background for a high-fidelity inventory management system UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRXGMcPUP48zdyXap2znO82Jm3dwEoMpLuLFGo3zv2JTbJG5CO61OFvhN_AiWkI50VNnO0b9QwqwaeqTouRTC85usaxunqerKeUea2exwRZZWrZGE4moKiaAyCx1BwQnVYmmkpwCfkDr3ZxQoopmfumN3e79-5sOd491teApS_1-7QfILgGl2B4IN8VIIiz1-v0VMvXYBiD8T8wYquEa6tdHcpYjd6Wzbes2z0HsY3sMFuFElKrtcikF9ZsTeaiBUEwpg6sVZUINwE"/>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Neo-Flask 1L Silver</p>
+<p class="text-[10px] text-secondary">SKU: NF-1L-SLVR</p>
+</div>
+</div>
+</td>
+<td class="px-gutter py-5">
+<div class="flex items-center gap-2">
+<div class="w-24 h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="w-[12%] h-full bg-error"></div>
+</div>
+<span class="font-body-sm text-error font-bold">45</span>
+</div>
+</td>
+<td class="px-gutter py-5 font-body-sm text-error">0.8 wks</td>
+<td class="px-gutter py-5 font-body-sm">21 days</td>
+<td class="px-gutter py-5">
+<span class="px-2 py-1 bg-error-container/20 text-error text-[11px] font-bold rounded-lg uppercase">Critical</span>
+</td>
+<td class="px-gutter py-5">
+<span class="text-body-sm text-primary font-bold">Order +500 units</span>
+</td>
+<td class="px-gutter py-5 text-right">
+<button class="px-4 py-1.5 bg-primary text-on-primary text-xs font-bold rounded-lg">Order Now</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-gutter py-5">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-variant flex items-center justify-center">
+<img class="w-10 h-10 object-contain" data-alt="High-quality professional e-commerce product image of a modern smart lighting accessory or small electronics device, highlighting clean lines and minimalist design, set against a soft, bright background for a premium user interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbVy8ipk2At7KMvhqhOYWztTXitiQDkKGoGEXYuwE9uhlvJ59sC4CtBgJIEryQyFrGIYUJO4VkgpFUOqv6vuxplnhHQgjAL128ju0d8mJY1V87-NfdQxs80mwvX5gbS_tNzxS66BZ3JqOw6dHsI_QeK6tMgfJvoFwMQ7sb3DDn9s1cqi0rfXDJPmsvnLCkO9GWVfRaUzF11sJL2pFjaNmVmhafg5JCbvt7R45l4ISJTgxfEWbmhen4-YTsgmx0vi0TA3Rs1Bs1-k04"/>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Smart Ambient Hub</p>
+<p class="text-[10px] text-secondary">SKU: SH-AMB-20</p>
+</div>
+</div>
+</td>
+<td class="px-gutter py-5">
+<div class="flex items-center gap-2">
+<div class="w-24 h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="w-[45%] h-full bg-secondary"></div>
+</div>
+<span class="font-body-sm text-on-surface">128</span>
+</div>
+</td>
+<td class="px-gutter py-5 font-body-sm">2.1 wks</td>
+<td class="px-gutter py-5 font-body-sm">18 days</td>
+<td class="px-gutter py-5">
+<span class="px-2 py-1 bg-surface-container-highest text-secondary text-[11px] font-bold rounded-lg uppercase">Low Stock</span>
+</td>
+<td class="px-gutter py-5">
+<span class="text-body-sm text-primary">Replenish by Monday</span>
+</td>
+<td class="px-gutter py-5 text-right">
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-all">
+<span class="material-symbols-outlined text-outline">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 bg-surface-container-low/30 border-t border-outline-variant/30 flex justify-between items-center text-label-sm text-secondary">
+<span>Showing 1-10 of 248 SKUs</span>
+<div class="flex gap-4">
+<button class="hover:text-primary transition-colors">Previous</button>
+<button class="text-primary font-bold underline underline-offset-4">1</button>
+<button class="hover:text-primary transition-colors">2</button>
+<button class="hover:text-primary transition-colors">3</button>
+<button class="hover:text-primary transition-colors">Next</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Interactive Layer: Simple Tooltip Logic -->
+<script>
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.classList.add('shadow-inner');
+            });
+            row.addEventListener('mouseleave', () => {
+                row.classList.remove('shadow-inner');
+            });
+        });
+    </script>
+</body></html>

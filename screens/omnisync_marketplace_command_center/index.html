@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OmniSync Executive Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#a06500",
+                    "surface": "#0b1326",
+                    "inverse-surface": "#dae2fd",
+                    "on-surface-variant": "#c2c6d8",
+                    "on-background": "#dae2fd",
+                    "surface-container-low": "#131b2e",
+                    "primary": "#b3c5ff",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffddb8",
+                    "surface-container-high": "#222a3d",
+                    "on-tertiary-fixed": "#2a1700",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "on-error": "#690005",
+                    "on-surface": "#dae2fd",
+                    "on-primary-container": "#f8f7ff",
+                    "surface-container-lowest": "#060e20",
+                    "outline-variant": "#424656",
+                    "background": "#0b1326",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-primary-fixed-variant": "#003fa4",
+                    "on-secondary-fixed-variant": "#005236",
+                    "primary-fixed": "#dae1ff",
+                    "primary-container": "#0066ff",
+                    "on-secondary-fixed": "#002113",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "on-tertiary": "#472a00",
+                    "on-secondary": "#003824",
+                    "surface-tint": "#b3c5ff",
+                    "secondary": "#4edea3",
+                    "surface-bright": "#31394d",
+                    "surface-variant": "#2d3449",
+                    "surface-container-highest": "#2d3449",
+                    "surface-container": "#171f33",
+                    "on-secondary-container": "#00311f",
+                    "error": "#ffb4ab",
+                    "on-primary-fixed": "#001849",
+                    "inverse-on-surface": "#283044",
+                    "on-primary": "#002b75",
+                    "on-tertiary-container": "#fff7f1",
+                    "tertiary": "#ffb95f",
+                    "primary-fixed-dim": "#b3c5ff",
+                    "inverse-primary": "#0054d6",
+                    "secondary-container": "#00a572",
+                    "outline": "#8c90a1",
+                    "error-container": "#93000a",
+                    "surface-dim": "#0b1326",
+                    "secondary-fixed": "#6ffbbe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "margin-mobile": "16px",
+                    "unit": "4px",
+                    "gutter": "16px",
+                    "margin-desktop": "32px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "data-tabular": ["JetBrains Mono"],
+                    "body-md": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "headline-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "data-tabular": ["13px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-caps": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #020617; /* Level 0 Base */
+            color: #dae2fd;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid #1E293B;
+            backdrop-filter: blur(24px) saturate(150%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .zebra-row:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-hidden">
+<!-- Side Navigation Bar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-screen w-[240px] border-r border-outline-variant bg-surface-container/80 backdrop-blur-3xl shadow-sm flex flex-col p-4 z-50">
+<div class="mb-8">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">OmniSync</h1>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-widest mt-1">Global View</p>
+</div>
+<nav class="flex-1 space-y-1">
+<div class="flex items-center gap-3 px-4 py-2 bg-primary-container text-on-primary-container rounded-lg active:scale-95 transition-transform cursor-pointer">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md">Dashboard</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 cursor-pointer">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body-md">Inventory</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 cursor-pointer">
+<span class="material-symbols-outlined">hub</span>
+<span class="font-body-md">Marketplaces</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 cursor-pointer">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md">Analytics</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md">Settings</span>
+</div>
+</nav>
+<div class="mt-auto p-4 glass-card rounded-xl">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-8 h-8 rounded bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-xs">OS</div>
+<div>
+<p class="text-xs font-bold">Workspace Alpha</p>
+<p class="text-[10px] text-on-surface-variant">Active</p>
+</div>
+</div>
+<button class="w-full py-2 text-xs font-bold text-primary border border-primary/20 rounded hover:bg-primary/10 transition-colors">Switch Workspace</button>
+</div>
+</aside>
+<!-- Top App Bar (Shared Component) -->
+<header class="fixed top-0 right-0 left-[240px] z-40 flex justify-between items-center px-margin-desktop h-16 border-b border-outline-variant bg-surface/80 backdrop-blur-3xl shadow-md">
+<div class="flex items-center bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant w-96">
+<span class="material-symbols-outlined text-on-surface-variant mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-on-surface w-full p-0" placeholder="Search orders, SKU or metrics..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-opacity" title="Sync">sync</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-opacity" title="Notifications">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-opacity" title="Account">account_circle</span>
+</div>
+<div class="h-8 w-px bg-outline-variant"></div>
+<div class="flex items-center gap-2">
+<div class="text-right">
+<p class="text-xs font-bold">Alexander Pierce</p>
+<p class="text-[10px] text-secondary">Pro Tier</p>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a high-level executive male with short dark hair, wearing a sleek black turtleneck, captured in dramatic low-key lighting against a dark navy studio background. The style is modern corporate, sharp focus, with a sophisticated and authoritative atmosphere that fits a high-stakes financial platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnX5THlRB_lroidiD253kLTRsOsxtLYkWZMbk76k_XFc9hHJ5DmQwfKtbzNT1FObX6AM6F1y0y5d5Tpnx9AiQpljpTGOfvh1RuOlkNzDJrerA9Jt_WgGD-u1Jpb4QNhIwLTh4Z8GbwnEB_NzgTcBv9RImNcV8QjrNzipEtNuwdXraXl0zl7R7ymAxjXZANK3T7mGo6Nkou_VXTkfwwkqNMEyEUZEYSntw_H0HWPUjYG43O-QaKJElBjc6iGnuCYjljIX5O_PnGak6P"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pl-[240px] pt-16 h-screen w-full overflow-y-auto bg-surface-dim">
+<div class="p-8 max-w-[1600px] mx-auto space-y-8">
+<!-- Hero Metrics: Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Total Revenue -->
+<div class="glass-card p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl">payments</span>
+</div>
+<p class="font-label-caps text-on-surface-variant mb-2">TOTAL REVENUE</p>
+<div class="flex items-end gap-2">
+<h2 class="font-display-lg text-primary">$2.4M</h2>
+<span class="text-secondary text-sm font-bold mb-2 flex items-center">
+<span class="material-symbols-outlined text-xs mr-1">arrow_upward</span>
+                            12%
+                        </span>
+</div>
+<div class="mt-4 h-1 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary w-3/4 shadow-[0_0_10px_rgba(179,197,255,0.5)]"></div>
+</div>
+</div>
+<!-- Orders -->
+<div class="glass-card p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl">shopping_cart</span>
+</div>
+<p class="font-label-caps text-on-surface-variant mb-2">TOTAL ORDERS</p>
+<div class="flex items-end gap-2">
+<h2 class="font-display-lg text-on-surface">45.2k</h2>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-2">+342 from yesterday</p>
+</div>
+<!-- Expenses -->
+<div class="glass-card p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl">account_balance_wallet</span>
+</div>
+<p class="font-label-caps text-on-surface-variant mb-2">MARKETPLACE EXPENSES</p>
+<div class="flex items-end gap-2">
+<h2 class="font-display-lg text-error">$840k</h2>
+</div>
+<div class="flex gap-1 mt-4">
+<div class="h-1 flex-1 bg-primary/40 rounded-full" title="Amazon"></div>
+<div class="h-1 flex-1 bg-tertiary rounded-full" title="Noon"></div>
+<div class="h-1 flex-1 bg-secondary-container rounded-full" title="Trendyol"></div>
+</div>
+</div>
+<!-- Net Profit -->
+<div class="glass-card p-6 rounded-xl border-l-4 border-l-secondary relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-secondary/5 rounded-full blur-3xl"></div>
+<p class="font-label-caps text-on-surface-variant mb-2">NET PROFIT</p>
+<div class="flex items-end gap-2">
+<h2 class="font-display-lg text-secondary">$1.2M</h2>
+</div>
+<p class="text-[10px] text-secondary mt-2">Margin: 50.0%</p>
+</div>
+</div>
+<!-- Central Content: Sales Chart & KPI Sidebar -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- Main Chart -->
+<div class="lg:col-span-9 glass-card p-6 rounded-xl min-h-[480px] flex flex-col">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="font-headline-sm">Sales Overview</h3>
+<p class="text-xs text-on-surface-variant">Real-time cross-channel performance</p>
+</div>
+<div class="flex gap-3">
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-variant rounded text-[10px] font-bold">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Amazon
+                            </div>
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-variant rounded text-[10px] font-bold">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Noon
+                            </div>
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-variant rounded text-[10px] font-bold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Trendyol
+                            </div>
+</div>
+</div>
+<div class="flex-1 relative">
+
+<!-- Simulated Chart Overlay -->
+<div class="absolute inset-0 flex items-end justify-between px-4 pb-8">
+<div class="w-[2px] h-[40%] bg-outline-variant/30 relative"><span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px]">Mon</span></div>
+<div class="w-[2px] h-[60%] bg-outline-variant/30 relative"><span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px]">Tue</span></div>
+<div class="w-[2px] h-[55%] bg-outline-variant/30 relative"><span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px]">Wed</span></div>
+<div class="w-[2px] h-[85%] bg-outline-variant/30 relative"><span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px]">Thu</span></div>
+<div class="w-[2px] h-[70%] bg-outline-variant/30 relative"><span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px]">Fri</span></div>
+<div class="w-[2px] h-[95%] bg-outline-variant/30 relative"><span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px]">Sat</span></div>
+<div class="w-[2px] h-[80%] bg-outline-variant/30 relative"><span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px]">Sun</span></div>
+</div>
+</div>
+</div>
+<!-- KPI Sidebar -->
+<div class="lg:col-span-3 space-y-6">
+<div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center">
+<p class="font-label-caps text-on-surface-variant mb-4">ROAS</p>
+<div class="relative w-32 h-32 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-variant" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364.4" stroke-dashoffset="100" stroke-width="8"></circle>
+</svg>
+<span class="absolute font-headline-md text-primary">4.2x</span>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-4">Target: 3.5x</p>
+</div>
+<div class="glass-card p-6 rounded-xl">
+<div class="flex justify-between items-center mb-4">
+<p class="font-label-caps text-on-surface-variant">ACOS</p>
+<span class="text-secondary text-[10px] font-bold">Healthy</span>
+</div>
+<h4 class="font-headline-md text-on-surface">18%</h4>
+<div class="mt-4 space-y-2">
+<div class="flex justify-between text-[10px]">
+<span>Amazon Ads</span>
+<span>16.2%</span>
+</div>
+<div class="h-1 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[16%]"></div>
+</div>
+<div class="flex justify-between text-[10px] mt-4">
+<span>Noon Promos</span>
+<span>21.4%</span>
+</div>
+<div class="h-1 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[21%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Orders Table -->
+<div class="glass-card rounded-xl overflow-hidden">
+<div class="p-6 border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-headline-sm">Recent Orders Stream</h3>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Live Updates</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-high/50 border-b border-outline-variant">
+<tr>
+<th class="px-6 py-4 font-label-caps text-on-surface-variant">Order ID</th>
+<th class="px-6 py-4 font-label-caps text-on-surface-variant">Customer</th>
+<th class="px-6 py-4 font-label-caps text-on-surface-variant">Marketplace</th>
+<th class="px-6 py-4 font-label-caps text-on-surface-variant">Amount</th>
+<th class="px-6 py-4 font-label-caps text-on-surface-variant">Status</th>
+<th class="px-6 py-4 font-label-caps text-on-surface-variant text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-data-tabular">
+<tr class="zebra-row hover:bg-primary/5 transition-colors group">
+<td class="px-6 py-4 text-primary font-bold">#OS-88219</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant"></div>
+<span>Sarah Jenkins</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-black flex items-center justify-center">
+<span class="text-[10px] font-black text-white">a</span>
+</div>
+<span>Amazon UAE</span>
+</div>
+</td>
+<td class="px-6 py-4">$142.00</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-secondary-container/10 text-secondary text-[10px] font-bold uppercase border border-secondary/20">Processing</span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer group-hover:text-primary">more_vert</span>
+</td>
+</tr>
+<tr class="zebra-row hover:bg-primary/5 transition-colors group">
+<td class="px-6 py-4 text-primary font-bold">#OS-88218</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant"></div>
+<span>Marco Rossi</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-tertiary flex items-center justify-center">
+<span class="text-[10px] font-black text-on-tertiary">n</span>
+</div>
+<span>Noon KSA</span>
+</div>
+</td>
+<td class="px-6 py-4">$2,105.50</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-primary-container/10 text-primary text-[10px] font-bold uppercase border border-primary/20">Shipped</span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer group-hover:text-primary">more_vert</span>
+</td>
+</tr>
+<tr class="zebra-row hover:bg-primary/5 transition-colors group">
+<td class="px-6 py-4 text-primary font-bold">#OS-88217</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant"></div>
+<span>Layla Ahmed</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-secondary-container flex items-center justify-center">
+<span class="text-[10px] font-black text-on-secondary">t</span>
+</div>
+<span>Trendyol TR</span>
+</div>
+</td>
+<td class="px-6 py-4">$89.90</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-surface-variant text-on-surface-variant text-[10px] font-bold uppercase border border-outline-variant">Delivered</span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer group-hover:text-primary">more_vert</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+<!-- Micro-interaction Scripts -->
+<script>
+        // Simple hover effect for glass cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // Live Clock/Refresh simulator
+        setInterval(() => {
+            const timeElements = document.querySelectorAll('.live-time');
+            const now = new Date();
+            timeElements.forEach(el => {
+                el.textContent = now.toLocaleTimeString();
+            });
+        }, 1000);
+    </script>
+</body></html>

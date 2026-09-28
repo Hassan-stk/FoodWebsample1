@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-fixed-dim":"#e9c176","surface":"#f7f9ff","error-container":"#ffdad6","primary":"#00020a","primary-fixed-dim":"#b7c6f1","primary-container":"#0b1b3d","on-primary-fixed-variant":"#38466a","surface-container":"#e3efff","on-secondary-fixed":"#002116","surface-dim":"#cbdcef","on-tertiary":"#ffffff","surface-bright":"#f7f9ff","inverse-surface":"#223241","secondary-fixed-dim":"#98d3b9","on-tertiary-fixed":"#261900","inverse-primary":"#b7c6f1","surface-container-high":"#d9eafe","tertiary-container":"#281a00","surface-container-lowest":"#ffffff","inverse-on-surface":"#e8f2ff","tertiary":"#030200","on-background":"#0c1d2b","on-secondary":"#ffffff","secondary":"#2f6954","secondary-container":"#b0ecd2","on-tertiary-fixed-variant":"#5d4201","on-primary-container":"#7684ac","tertiary-fixed":"#ffdea5","on-surface":"#0c1d2b","on-secondary-container":"#346d58","secondary-fixed":"#b3efd5","background":"#f7f9ff","on-primary-fixed":"#0a1a3c","primary-fixed":"#dae2ff","surface-variant":"#d3e4f8","on-secondary-fixed-variant":"#13503d","on-primary":"#ffffff","error":"#ba1a1a","outline-variant":"#c5c6cf","surface-tint":"#505e83","surface-container-highest":"#d3e4f8","outline":"#75777f","on-surface-variant":"#45464e","surface-container-low":"#edf4ff","on-tertiary-container":"#a17f3c","on-error-container":"#93000a","on-error":"#ffffff"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"margin-mobile":"1rem","margin":"3rem","space-xs":"0.25rem","gutter-mobile":"1rem","space-sm":"0.5rem","space-lg":"1.5rem","space-md":"1rem","gutter":"1.5rem","space-xl":"2.5rem"},fontFamily:{"headline-sm":["Playfair Display"],"headline-lg-mobile":["Playfair Display"],"body-md":["Inter"],"headline-md":["Playfair Display"],"headline-lg":["Playfair Display"],"display-xl-mobile":["Playfair Display"],"label-md":["Inter"],"title-md":["Inter"],"body-lg":["Inter"],"display-xl":["Playfair Display"],"label-sm":["Inter"]},fontSize:{"headline-sm":["22px",{lineHeight:"30px",fontWeight:"600"}],"headline-lg-mobile":["28px",{lineHeight:"36px",fontWeight:"600"}],"body-md":["14px",{lineHeight:"22px",fontWeight:"400"}],"headline-md":["28px",{lineHeight:"36px",fontWeight:"600"}],"headline-lg":["40px",{lineHeight:"48px",fontWeight:"600"}],"display-xl-mobile":["36px",{lineHeight:"44px",fontWeight:"700"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.05em",fontWeight:"600"}],"title-md":["18px",{lineHeight:"26px",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"26px",fontWeight:"400"}],"display-xl":["56px",{lineHeight:"68px",fontWeight:"700"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="bg-primary-container text-on-primary-fixed py-space-xs px-margin-mobile lg:px-margin"><div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-space-xs font-label-sm text-label-sm tracking-wider uppercase"><div class="flex items-center gap-space-md"><span class="text-tertiary-fixed font-semibold">Hamd Chemicals Group</span><span class="hidden sm:inline text-on-primary-container">|</span><span class="hidden sm:inline text-on-primary-fixed">30+ Years of Manufacturing &amp; Supply Excellence</span><span class="hidden lg:inline text-on-primary-container">|</span><span class="hidden lg:inline text-on-primary-fixed">ISO &amp; Global Standards Verified</span></div><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[14px] text-tertiary-fixed">mail</span><span>Global B2B Inquiries:</span><a class="text-tertiary-fixed hover:text-on-primary font-medium tracking-normal lowercase transition-colors" href="mailto:inquiries@hamdessentials.com">inquiries@hamdessentials.com</a></div></div></div><div class="h-20 max-w-7xl mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><a class="flex items-center gap-space-sm" data-path="home" href="#"><img alt="HAMD Essentials Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XJBaPX5AOWyeUmjcK73h8zuzAlmrRW2uojK-lGr6dkBRW2XlIdG-6h2Q-t-RcIkJwioVErC_Nq6glboatwlUKU1hfTsvIE1mSwPPqksb1EgQFDLIUcuBgCiIlgjiC-xDP5IR5uPBI3Nuj_OEq-X3IIE1Boo0j1bkTg3YNba6Bc0ddYyrL8aJ7qeU7xoic0mQD_O-nqBzK0rh5nZqzjT5hRcamP92NavQ7kJu_hUaOEXWl7jgj_y8PgxN4"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">HAMD ESSENTIALS</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">A Hamd Chemicals Enterprise</span></div></a></div><nav class="hidden xl:flex items-center gap-space-xs font-label-md text-label-md" data-active-classes="bg-surface-container text-on-surface font-semibold"><a class="px-space-sm py-space-xs rounded text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#">Home</a><a class="px-space-sm py-space-xs rounded text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-space-xs" data-path="products-and-categories" href="#">Products &amp; Categories</a><a class="px-space-sm py-space-xs rounded text-on-surface-variant hover:text-on-surface transition-colors" data-path="quality-and-compliance" href="#">Quality &amp; Compliance</a><a class="px-space-sm py-space-xs rounded text-on-surface-variant hover:text-on-surface transition-colors" data-path="about-us" href="#">About Us (30-Year Legacy)</a><a class="px-space-sm py-space-xs rounded text-on-surface-variant hover:text-on-surface transition-colors" data-path="applications-and-industries" href="#">Applications &amp; Industries</a><a class="px-space-sm py-space-xs rounded text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#">Contact</a></nav><div class="flex items-center gap-space-md"><button aria-label="Search Catalog &amp; SKU" class="w-9 h-9 rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">search</span></button><div class="hidden md:flex flex-col text-right font-label-sm text-label-sm"><span class="text-on-surface-variant">Direct Supply Hotline</span><a class="font-title-md text-title-md text-primary font-bold hover:text-secondary transition-colors" href="tel:+18005554263">+1 (800) 555-HAMD</a></div><a class="inline-flex items-center justify-center px-space-md py-space-sm rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary font-label-md text-label-md tracking-wider uppercase transition-all shadow-[0_1px_3px_rgba(11,27,61,0.04)]" data-path="request-a-quote" href="#"><span class="material-symbols-outlined mr-space-xs text-[18px]">request_quote</span>Request a Quote</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-28 bg-surface"><div class="flex flex-col w-full">
+<!-- Interactive State & Dynamic Filter Controller Script -->
+<script>
+    function switchCategory(catId) {
+      const tabs = document.querySelectorAll('.cat-tab-btn');
+      tabs.forEach(tab => {
+        if(tab.getAttribute('data-target') === catId) {
+          tab.classList.add('bg-primary-container', 'text-on-primary', 'shadow-md');
+          tab.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+        } else {
+          tab.classList.remove('bg-primary-container', 'text-on-primary', 'shadow-md');
+          tab.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+        }
+      });
+
+      const sections = document.querySelectorAll('.division-block');
+      sections.forEach(sec => {
+        if (catId === 'all' || sec.getAttribute('data-division') === catId) {
+          sec.classList.remove('hidden');
+        } else {
+          sec.classList.add('hidden');
+        }
+      });
+    }
+
+    function filterProducts() {
+      const query = document.getElementById('sku-search-input').value.toLowerCase().trim();
+      const grade = document.getElementById('grade-select').value.toLowerCase();
+      const cards = document.querySelectorAll('.product-technical-card');
+
+      cards.forEach(card => {
+        const title = card.getAttribute('data-name').toLowerCase();
+        const code = card.getAttribute('data-code').toLowerCase();
+        const cardGrade = card.getAttribute('data-grade').toLowerCase();
+
+        const matchesQuery = !query || title.includes(query) || code.includes(query);
+        const matchesGrade = !grade || grade === 'all' || cardGrade.includes(grade);
+
+        if (matchesQuery && matchesGrade) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+<!-- Top Hero & Search Filter Architecture -->
+<section class="w-full bg-surface-container-low py-space-xl">
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin flex flex-col gap-space-lg">
+<!-- Breadcrumb and Division Tagline -->
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Catalog</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-secondary font-semibold">Technical Divisions</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface">Comprehensive Chemical &amp; Botanical Inventory</span>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span>99.8% Batch Purity Audit Certified</span>
+</div>
+</div>
+<!-- Hero Header & Value Proposition -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-end">
+<div class="lg:col-span-8 flex flex-col gap-space-sm">
+<span class="font-label-md text-label-md uppercase tracking-widest text-secondary font-bold">HAMD Enterprise Chemical Portfolio</span>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Products &amp; Core Categories</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+            Explore our four dedicated ingredient and chemical divisions, engineered to meet stringent global manufacturing standards across food, beverage, active nutraceutical, and pharmaceutical supply chains.
+          </p>
+</div>
+<div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-space-xs items-start lg:items-end">
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-md py-space-sm bg-primary-container text-on-primary rounded font-label-md text-label-md uppercase tracking-wider hover:bg-primary transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed">download</span>
+            Download Full 2025 Spec Catalog (PDF)
+          </button>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Version 4.19 | Released Monthly with CoA Index</span>
+</div>
+</div>
+<!-- Live Search & Filtering Panel -->
+<div class="w-full bg-surface-container-lowest p-space-md rounded-xl shadow-md flex flex-col gap-space-md">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-sm items-center">
+<!-- Live Input Search -->
+<div class="md:col-span-6 relative">
+<span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full pl-10 pr-space-md py-space-sm bg-surface rounded font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-tertiary-fixed transition-all" id="sku-search-input" onkeyup="filterProducts()" placeholder="Search by Chemical Name, CAS #, E-Number, or Application..." type="text"/>
+</div>
+<!-- Grade Selector -->
+<div class="md:col-span-3">
+<select class="w-full px-space-sm py-space-sm bg-surface rounded font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-tertiary-fixed" id="grade-select" onchange="filterProducts()">
+<option value="all">All Regulatory Grades (FCC/USP/BP)</option>
+<option value="usp">USP / Pharma Pure Grade</option>
+<option value="fcc">FCC / Food Grade</option>
+<option value="non-gmo">Certified Non-GMO / Natural</option>
+</select>
+</div>
+<!-- Certification Multi-Indicator -->
+<div class="md:col-span-3 flex items-center justify-between px-space-sm py-space-sm bg-surface-container rounded">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>All 3,420+ SKUs Active</span>
+</div>
+<span class="px-space-xs py-0.5 rounded text-tertiary-fixed-dim bg-primary font-label-sm text-label-sm">ISO 9001</span>
+</div>
+</div>
+<!-- Filter Division Tabs -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-space-xs">
+<button class="cat-tab-btn px-space-md py-space-xs rounded-full font-label-md text-label-md whitespace-nowrap bg-primary-container text-on-primary shadow-md transition-all" data-target="all" onclick="switchCategory('all')">
+            All Divisions (16 SKUs Featured)
+          </button>
+<button class="cat-tab-btn px-space-md py-space-xs rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-target="food-chem" onclick="switchCategory('food-chem')">
+            01. Food Chemicals
+          </button>
+<button class="cat-tab-btn px-space-md py-space-xs rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-target="food-colors" onclick="switchCategory('food-colors')">
+            02. Food Colours &amp; Lake Powders
+          </button>
+<button class="cat-tab-btn px-space-md py-space-xs rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-target="pharma" onclick="switchCategory('pharma')">
+            03. Pharmaceutical &amp; Nutraceutical
+          </button>
+<button class="cat-tab-btn px-space-md py-space-xs rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-target="dehydrated" onclick="switchCategory('dehydrated')">
+            04. Dehydrated Fruits &amp; Botanicals
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Specification Matrix Banner -->
+<section class="w-full bg-primary text-on-primary py-space-md">
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin grid grid-cols-2 md:grid-cols-4 gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary-fixed text-[24px]">science</span>
+<div>
+<span class="block font-title-md text-title-md text-on-primary leading-tight font-bold">100% CoA Backed</span>
+<span class="font-label-sm text-label-sm text-on-primary-container">Batch analytical verification</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">inventory_2</span>
+<div>
+<span class="block font-title-md text-title-md text-on-primary leading-tight font-bold">Multi-Scale Packs</span>
+<span class="font-label-sm text-label-sm text-on-primary-container">From 1kg to 1000kg totes</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary-fixed text-[24px]">local_shipping</span>
+<div>
+<span class="block font-title-md text-title-md text-on-primary leading-tight font-bold">48h Lab Samples</span>
+<span class="font-label-sm text-label-sm text-on-primary-container">Rapid R&amp;D dispatch service</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">workspace_premium</span>
+<div>
+<span class="block font-title-md text-title-md text-on-primary leading-tight font-bold">GMP &amp; Halal Verified</span>
+<span class="font-label-sm text-label-sm text-on-primary-container">Audited production lines</span>
+</div>
+</div>
+</div>
+</section>
+<!-- MAIN CATALOG CONTENT CONTAINER -->
+<div class="w-full max-w-7xl mx-auto px-margin-mobile lg:px-margin py-space-xl flex flex-col gap-space-xl">
+<!-- ========================================== -->
+<!-- DIVISION 01: FOOD CHEMICALS -->
+<!-- ========================================== -->
+<section class="division-block flex flex-col gap-space-md" data-division="food-chem">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm pb-space-xs">
+<div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm font-bold text-secondary uppercase tracking-widest">
+<span class="material-symbols-outlined text-[16px]">biotech</span>
+<span>Division 01</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary">Food Chemicals &amp; Preservation Agents</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+            Precision industrial compounds, organic acidulants, hydrocolloids, and stabilizers for modern food manufacturing, dairy processing, and shelf-life extension.
+          </p>
+</div>
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>4 Active Featured Monographs</span>
+</div>
+</div>
+<!-- Product Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Food Chem 1: Citric Acid -->
+<div class="product-technical-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden" data-code="E330 CAS 77-92-9" data-grade="fcc usp" data-name="Citric Acid Anhydrous Monohydrate">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close up shot of fine pure white crystalline citric acid powder displayed inside a minimalist laboratory white porcelain bowl on clean marble background, macro industrial detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPtsVlQxHqilekdviVlX0sGXU4iz0v_us4XQYuVvVK6qoPIPH-PbSLoq_yARy8ogQGIFul6RfLZsYBOGjq-Voo9cL7aiyJd3dzLCOQOUw7mhRSDkAIqT8j73jBPzaXhPKrnsBTdgqiL_JrlsaGnApdvIaz-8h5cuKWqlB4XWpIQiyXO0h6u7wWb409YJF5FsU1CV5rwO-iyd3JoY23v3YGmMxr7J3Qitlzyjvqhs6m0bq9r2ts7QRDKg"/>
+<div class="absolute top-2 right-2 px-space-xs py-0.5 rounded-full bg-surface-container-lowest/90 font-label-sm text-label-sm font-semibold text-secondary">
+              FCC / USP Grade
+            </div>
+<div class="absolute bottom-2 left-2 px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm">
+              CAS: 77-92-9
+            </div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">E330 Acidulant</span>
+<h3 class="font-title-md text-title-md text-primary leading-snug">Citric Acid (Anhydrous &amp; Mono)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                Primary organic acidulant engineered for sharp tartness, pH lowering, chelation, and shelf stabilization in beverages.
+              </p>
+</div>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col gap-1 font-label-sm text-label-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Assay / Purity:</span>
+<span class="font-semibold text-on-surface">99.5% - 100.5% Min</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Standard Unit:</span>
+<span class="font-semibold text-on-surface">25kg Kraft Bags / Sacks</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<a class="flex-1 py-space-xs rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary text-center font-label-md text-label-md uppercase tracking-wider transition-colors" data-path="request-a-quote" href="#">
+                Inquire
+              </a>
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Download Technical Data Sheet">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Food Chem 2: Xanthan Gum -->
+<div class="product-technical-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden" data-code="E415 CAS 11138-66-2" data-grade="fcc non-gmo" data-name="Xanthan Gum 80 Mesh 200 Mesh">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Light cream white hydrocolloid xanthan gum powder spread inside a ceramic evaporating dish, surrounded by modern chemistry glassware, macro composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRq6RB1ahZqBzDKuYOJOckT2mOWiEVW_9wGrVzfYEpvS41tAXqkFCh9XpX2FH81tpiA0eVy8vYxRvqPhrjzHe3AtFpRSDArgH8Bt30BxXVsR_TAZR6EAUybNPJmBJiw4rbaLmE-YD98_PTT-9TYkRNejfKm7Ju1-UxoJ5g602lyArIVgIx0M6h3dh7hyfYlG16KCfZiQosQfQiP3d1z-MU0InXSsnjxWeA6WkztxetHW6RWSwj0Bizag"/>
+<div class="absolute top-2 right-2 px-space-xs py-0.5 rounded-full bg-surface-container-lowest/90 font-label-sm text-label-sm font-semibold text-secondary">
+              Non-GMO Food Grade
+            </div>
+<div class="absolute bottom-2 left-2 px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm">
+              CAS: 11138-66-2
+            </div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">E415 Stabilizer</span>
+<h3 class="font-title-md text-title-md text-primary leading-snug">Xanthan Gum (80 &amp; 200 Mesh)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                High-performance bio-fermented polysaccharide conferring pseudoplastic viscosity, freeze-thaw stability, and suspension.
+              </p>
+</div>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col gap-1 font-label-sm text-label-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Viscosity (1% KCl):</span>
+<span class="font-semibold text-on-surface">1,200 - 1,800 mPa.s</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Standard Unit:</span>
+<span class="font-semibold text-on-surface">25kg PE Lined Cartons</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<a class="flex-1 py-space-xs rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary text-center font-label-md text-label-md uppercase tracking-wider transition-colors" data-path="request-a-quote" href="#">
+                Inquire
+              </a>
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Download Technical Data Sheet">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Food Chem 3: Sodium Benzoate / Potassium Sorbate -->
+<div class="product-technical-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden" data-code="E211 E202" data-grade="fcc" data-name="Sodium Benzoate Potassium Sorbate">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Dense crystalline white preservative granules and noodles arranged on modern brushed steel sampling scoop in clean pharmaceutical testing cleanroom." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9OFOMGMlSy0IHO_apSb8d6Na_Vz9xQD5zGi2RwxAwUFDGP1HAqXyxWCVMK61Y6xhWOMTO_dXHyQ_3mrRC3YOXkrM7___CPWJxhSb7D-EWymueVthmvFeQoz5gpqWYYu92rat5Rr4dDZCfYImC8XQNx80oREWHILGE5aNqZUTsVRG1KtUrOCz9kx1yw6ltAu6tz0vzZGHXhXnFQsmbzbtGVEkLsEs6fPcp4ch0vA-7doYuud6SMtUncw"/>
+<div class="absolute top-2 right-2 px-space-xs py-0.5 rounded-full bg-surface-container-lowest/90 font-label-sm text-label-sm font-semibold text-secondary">
+              FCC / BP Grade
+            </div>
+<div class="absolute bottom-2 left-2 px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm">
+              CAS: 532-32-1 / 24634-61-5
+            </div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">E211 / E202 Antimicrobial</span>
+<h3 class="font-title-md text-title-md text-primary leading-snug">Sodium Benzoate &amp; Sorbate</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                Synergistic antimicrobial preservatives inhibiting mold, yeast, and bacterial strains across acid-formulated foods.
+              </p>
+</div>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col gap-1 font-label-sm text-label-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Active Purity:</span>
+<span class="font-semibold text-on-surface">99.0% - 100.5% Dry</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Standard Unit:</span>
+<span class="font-semibold text-on-surface">25kg Kraft Woven Bag</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<a class="flex-1 py-space-xs rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary text-center font-label-md text-label-md uppercase tracking-wider transition-colors" data-path="request-a-quote" href="#">
+                Inquire
+              </a>
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Download Technical Data Sheet">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Food Chem 4: Ascorbic Acid -->
+<div class="product-technical-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden" data-code="E300 CAS 50-81-7" data-grade="usp fcc" data-name="Ascorbic Acid Vitamin C">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="High purity pure white micronized ascorbic acid vitamin C powder heaped gracefully in a porcelain vessel alongside stainless chemistry spatula." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvVMXqNVuUShOPn5fKpSfj-a0G5BnavH4UGfns8WIci683ZC7BFnsfZW0KcDx3Lm2yP4tK4PEIZ9aMkfl9_msV612xsZ3litTY717Chn3P6VZiEAUOL0EnDHtSjz-P19x1DAqJ4dDzj7CT1GSL6YEikqUsYSG9dv-wfH_bAS9XgqJRQITqJeprBDooD2nF5gMuo8xsGY6hKBqc3a0j-xRnJO5vijuzK7kDDRD1ctS-Var9xk-t9GXlVA"/>
+<div class="absolute top-2 right-2 px-space-xs py-0.5 rounded-full bg-surface-container-lowest/90 font-label-sm text-label-sm font-semibold text-secondary">
+              USP / FCC Grade
+            </div>
+<div class="absolute bottom-2 left-2 px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm">
+              CAS: 50-81-7
+            </div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">E300 Antioxidant</span>
+<h3 class="font-title-md text-title-md text-primary leading-snug">Pure L-Ascorbic Acid (Vit C)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                Potent multi-purpose antioxidant for dough enhancement, beverage fortification, and enzymatic browning mitigation.
+              </p>
+</div>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col gap-1 font-label-sm text-label-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Assay Titration:</span>
+<span class="font-semibold text-on-surface">99.7% Min (Direct)</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Standard Unit:</span>
+<span class="font-semibold text-on-surface">25kg Fiber Drum / Box</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<a class="flex-1 py-space-xs rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary text-center font-label-md text-label-md uppercase tracking-wider transition-colors" data-path="request-a-quote" href="#">
+                Inquire
+              </a>
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Download Technical Data Sheet">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- DIVISION 02: FOOD COLOURS (VIBRANT SHOWCASE) -->
+<!-- ========================================== -->
+<section class="division-block flex flex-col gap-space-md pt-space-lg" data-division="food-colors">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm pb-space-xs">
+<div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm font-bold text-tertiary-fixed-dim uppercase tracking-widest">
+<span class="material-symbols-outlined text-[16px]">palette</span>
+<span>Division 02</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary">Certified Food Colours &amp; Aluminum Lakes</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+            Vibrant, high-solubility synthetic dyes and oil-dispersible aluminum lakes engineered for thermal resistance, light fastness, and brilliant visual clarity.
+          </p>
+</div>
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span>Solubility &amp; Fastness Certified</span>
+</div>
+</div>
+<!-- Food Colours Product Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Colour 1: Tartrazine -->
+<div class="product-technical-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden" data-code="E102 CAS 1934-21-0" data-grade="fcc" data-name="Tartrazine Yellow FD&amp;C Yellow 5">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Vivid brilliant yellow pigment powder in small pure white porcelain cup next to stainless chemist spoon on bright slate table, high resolution color photo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHrjRKsJ7sHhsdm3s7AD87BvPVouQOaLAg5K9vFHQZptBQ65piFG_gMbgD411B2qLzFXgYyhKpYjHU7SMd66-tiV5ILx6xnAnbeU6bViTN64Z1iNhFfuOCKXkdSNbJHhrlqwRhjtOKsZzmNaLdvvkk6AK1eFiyL9cxI8hz_h627_mV-nfxPhe17VqLShF4RQ8wFMuzmV2y8wzO-BIky40E0fYMEvn2MoO6zHLN8PvgwRCusBk4QbC6TA"/>
+<div class="absolute top-2 right-2 px-space-xs py-0.5 rounded-full bg-surface-container-lowest/90 font-label-sm text-label-sm font-semibold text-primary">
+              FD&amp;C Yellow 5
+            </div>
+<div class="absolute bottom-2 left-2 flex items-center gap-1.5 px-space-xs py-0.5 rounded bg-surface-container-lowest/95 text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block"></span>
+<span>CI #19140</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">E102 Water Soluble</span>
+<h3 class="font-title-md text-title-md text-primary leading-snug">Tartrazine Yellow 85%</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                Sunny lemon hue with superior stability against reducing agents, acid media, and elevated baking temperatures.
+              </p>
+</div>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col gap-1 font-label-sm text-label-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Dye Content:</span>
+<span class="font-semibold text-on-surface">87.0% Min Pure Dye</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Water Solubility:</span>
+<span class="font-semibold text-on-surface">180 g/L @ 25°C</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<a class="flex-1 py-space-xs rounded bg-primary-container hover:bg-primary text-on-primary text-center font-label-md text-label-md uppercase tracking-wider transition-colors" data-path="request-a-quote" href="#">
+                Order Sample
+              </a>
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Technical Color Card">
+<span class="material-symbols-outlined text-[18px]">color_lens</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Colour 2: Allura Red -->
+<div class="product-technical-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden" data-code="E129 CAS 25956-17-6" data-grade="fcc" data-name="Allura Red AC FD&amp;C Red 40">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Intense rich crimson red food dye powder heaped in clean white ceramic laboratory dish with scattered red granules, macro product photograph." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBvOCJKUJ7_Zp_at5S6Buqxi4wK0XgkpIZtCtj_WSWSpu3VGsQblk5XLpPVbOwr5opQEJksjKly19CVGe7hwkHkRzYiLpiY54-3qFdM4-CJm5KFzZ0c6oLPMzP8FC-lHEwnpVF4IuSNfZpWuWRyxcOrx_9mjB277lL1molMdOAHLFouv7S-ADvpyyITft_2AhCMldgkEv8w8KkoC7weHfBT0ZX_a2UDErR1DdJPzIqoWHNc0BN66Jk8g"/>
+<div class="absolute top-2 right-2 px-space-xs py-0.5 rounded-full bg-surface-container-lowest/90 font-label-sm text-label-sm font-semibold text-primary">
+              FD&amp;C Red 40
+            </div>
+<div class="absolute bottom-2 left-2 flex items-center gap-1.5 px-space-xs py-0.5 rounded bg-surface-container-lowest/95 text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="w-2.5 h-2.5 rounded-full bg-red-600 inline-block"></span>
+<span>CI #16035</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">E129 Synthetic Dye</span>
+<h3 class="font-title-md text-title-md text-primary leading-snug">Allura Red AC 88%</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                Brilliant scarlet red optimized for carbonated soft drinks, fruit syrups, gelatin desserts, and confectionery coatings.
+              </p>
+</div>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col gap-1 font-label-sm text-label-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Dye Content:</span>
+<span class="font-semibold text-on-surface">88.0% Min Pure Dye</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Water Solubility:</span>
+<span class="font-semibold text-on-surface">220 g/L @ 25°C</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<a class="flex-1 py-space-xs rounded bg-primary-container hover:bg-primary text-on-primary text-center font-label-md text-label-md uppercase tracking-wider transition-colors" data-path="request-a-quote" href="#">
+                Order Sample
+              </a>
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Technical Color Card">
+<span class="material-symbols-outlined text-[18px]">color_lens</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Colour 3: Brilliant Blue FCF -->
+<div class="product-technical-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden" data-code="E133 CAS 3844-45-9" data-grade="fcc" data-name="Brilliant Blue FCF FD&amp;C Blue 1">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Deep vibrant cyan blue food powder inside pure white ceramic bowl with micro spoons and chemical glassware in industrial testing lab." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvvRIWDnnoj3HpmYFhriKbsxbXnhBGq-O3FHmYlnxKrfmSyOFcRhx5dAtVnhhvA7dBEXuoK3l2uNL4mbHYjY_ni4Mmgfe0MN2ipTlu6mWWKn_4CgSeJoG1uVlWJtF-zwSiuxkODts6Y9xlsyrY7ZZJPnGPMsPvvaOjS2jyfgtbHSucyJi3Q_or30LsEtkCasjDenzxLtkHgU4IoAXUUW7rqcMZ876kyfzz9JYdn7CbA9dhydo8gkd1Ig"/>
+<div class="absolute top-2 right-2 px-space-xs py-0.5 rounded-full bg-surface-container-lowest/90 font-label-sm text-label-sm font-semibold text-primary">
+              FD&amp;C Blue 1
+            </div>
+<div class="absolute bottom-2 left-2 flex items-center gap-1.5 px-space-xs py-0.5 rounded bg-surface-container-lowest/95 text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="w-2.5 h-2.5 rounded-full bg-blue-600 inline-block"></span>
+<span>CI #42090</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">E133 Triarylmethane</span>
+<h3 class="font-title-md text-title-md text-primary leading-snug">Brilliant Blue FCF</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                Ultra-intense luminous blue dye for ice cream, sports hydration beverages, mouthwashes, and hard candies.
+              </p>
+</div>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col gap-1 font-label-sm text-label-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Dye Content:</span>
+<span class="font-semibold text-on-surface">85.0% - 90.0% Min</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Water Solubility:</span>
+<span class="font-semibold text-on-surface">200 g/L @ 25°C</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<a class="flex-1 py-space-xs rounded bg-primary-container hover:bg-primary text-on-primary text-center font-label-md text-label-md uppercase tracking-wider transition-colors" data-path="request-a-quote" href="#">
+                Order Sample
+              </a>
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Technical Color Card">
+<span class="material-symbols-outlined text-[18px]">color_lens</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Colour 4: Sunset Yellow FCF -->
+<div class="product-technical-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden" data-code="E110 CAS 2783-94-0" data-grade="fcc" data-name="Sunset Yellow FCF FD&amp;C Yellow 6">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Vivid deep orange fine chemical dye powder contained inside round white laboratory dish on light concrete background, clean focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW9DpGlPM8ipVpKk0TYH483GqTW3a21vnodkOEPbGTgCnoS42ZGv1bScGp15A5S2ylTuRX2FQyCXBV3u3CXIIZm6MEpdSLkCoAgl6ph2YrtZQftAjyLlILkEbOpRHx3bYDv4n0sBl07GTOYNGaumOePDvEa63ylmfe7W0TFa9k1czlIwAKOOhqd2G0Z1oVmKaIKMHjFQdgHHxUPkAcYJawERYIOFTwHh9TUNZzkN8qSOKdhQY1jQAWoQ"/>
+<div class="absolute top-2 right-2 px-space-xs py-0.5 rounded-full bg-surface-container-lowest/90 font-label-sm text-label-sm font-semibold text-primary">
+              FD&amp;C Yellow 6
+            </div>
+<div class="absolute bottom-2 left-2 flex items-center gap-1.5 px-space-xs py-0.5 rounded bg-surface-container-lowest/95 text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="w-2.5 h-2.5 rounded-full bg-orange-500 inline-block"></span>
+<span>CI #15985</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">E110 Azo Dye</span>
+<h3 class="font-title-md text-title-md text-primary leading-snug">Sunset Yellow FCF 86%</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                Warm glowing amber-orange shade offering high UV photostability and seamless blending with Tartrazine.
+              </p>
+</div>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col gap-1 font-label-sm text-label-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Dye Content:</span>
+<span class="font-semibold text-on-surface">86.0% Min Pure Dye</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Water Solubility:</span>
+<span class="font-semibold text-on-surface">190 g/L @ 25°C</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<a class="flex-1 py-space-xs rounded bg-primary-container hover:bg-primary text-on-primary text-center font-label-md text-label-md uppercase tracking-wider transition-colors" data-path="request-a-quote" href="#">
+                Order Sample
+              </a>
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Technical Color Card">
+<span class="material-symbols-outlined text-[18px]">color_lens</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Feature: Color Fastness & Application Solubility Matrix Box -->
+<div class="w-full bg-surface-container p-space-md rounded-xl mt-space-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-sm">
+<div class="flex items-center gap-space-xs font-title-md text-title-md text-primary font-bold">
+<span class="material-symbols-outlined text-secondary">tune</span>
+<span>Technical Color Performance Reference Index</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Standardized to 0.1% aqueous solution tested @ pH 3.5 - 7.0</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md">
+<thead>
+<tr class="bg-surface-container-high text-on-surface font-semibold font-label-sm text-label-sm uppercase">
+<th class="py-space-xs px-space-sm">Colour Monograph</th>
+<th class="py-space-xs px-space-sm">Light Fastness</th>
+<th class="py-space-xs px-space-sm">Heat Stability</th>
+<th class="py-space-xs px-space-sm">Acid Stability (pH 3)</th>
+<th class="py-space-xs px-space-sm">Common Applications</th>
+<th class="py-space-xs px-space-sm text-right">Available Form</th>
+</tr>
+</thead>
+<tbody class="text-on-surface-variant">
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<td class="py-space-xs px-space-sm font-semibold text-primary">Tartrazine (E102)</td>
+<td class="py-space-xs px-space-sm text-secondary font-medium">Very Good (4.5/5)</td>
+<td class="py-space-xs px-space-sm">Excellent up to 205°C</td>
+<td class="py-space-xs px-space-sm">Unaffected</td>
+<td class="py-space-xs px-space-sm">Beverages, Instant Noodles, Snacks</td>
+<td class="py-space-xs px-space-sm text-right font-label-sm text-label-sm">Powder / Lake (15-40%)</td>
+</tr>
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="py-space-xs px-space-sm font-semibold text-primary">Allura Red AC (E129)</td>
+<td class="py-space-xs px-space-sm text-secondary font-medium">Excellent (5/5)</td>
+<td class="py-space-xs px-space-sm">Excellent up to 215°C</td>
+<td class="py-space-xs px-space-sm">Unaffected</td>
+<td class="py-space-xs px-space-sm">Confectionery, Syrups, Bakery Glazes</td>
+<td class="py-space-xs px-space-sm text-right font-label-sm text-label-sm">Powder / Lake / Granular</td>
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<td class="py-space-xs px-space-sm font-semibold text-primary">Brilliant Blue (E133)</td>
+<td class="py-space-xs px-space-sm text-on-surface-variant">Moderate to Good (3.5/5)</td>
+<td class="py-space-xs px-space-sm">Good up to 180°C</td>
+<td class="py-space-xs px-space-sm">Slight fade under pH 2.5</td>
+<td class="py-space-xs px-space-sm">Isotonic Drinks, Jellies, Flavored Waters</td>
+<td class="py-space-xs px-space-sm text-right font-label-sm text-label-sm">Powder / Lake</td>
+</tr>
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="py-space-xs px-space-sm font-semibold text-primary">Sunset Yellow (E110)</td>
+<td class="py-space-xs px-space-sm text-secondary font-medium">Very Good (4.5/5)</td>
+<td class="py-space-xs px-space-sm">Excellent up to 200°C</td>
+<td class="py-space-xs px-space-sm">Unaffected</td>
+<td class="py-space-xs px-space-sm">Seasonings, Jam, Snack Extrusions</td>
+<td class="py-space-xs px-space-sm text-right font-label-sm text-label-sm">Powder / Lake (15-38%)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- DIVISION 03: PHARMA & NUTRACEUTICAL -->
+<!-- ========================================== -->
+<section class="division-block flex flex-col gap-space-md pt-space-lg" data-division="pharma">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm pb-space-xs">
+<div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm font-bold text-secondary uppercase tracking-widest">
+<span class="material-symbols-outlined text-[16px]">medical_services</span>
+<span>Division 03</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary">Pharmaceutical &amp; Nutraceutical Excipients</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+            High purity pharmacopeia-compliant binders, direct compression excipients, lubricants, and active functional ingredients validated for cGMP manufacturing.
+          </p>
+</div>
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>EP / USP / JP Compendial Grade</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Pharma 1: MCC -->
+<div class="product-technical-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden" data-code="CAS 9004-34-6" data-grade="usp non-gmo" data-name="Microcrystalline Cellulose MCC PH-101 PH-102">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Refined fine white microcrystalline cellulose powder heaped cleanly in pharmaceutical glass dish, pristine tableting excipient photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5dtcT5cwv5YfsSUL8TRTt6hYCfR_DJC7Cdr4z9s0sYqAKU1HKzv6pZTV_NdOIv--At8o4ULnTPuMKWmKV74JwpIe9WyDY7BzLBm7KDbRKRmNDscrWIAo2hvrgMhcvsAj-PeoiTU3Q7ohpTazpsY9Y1XoCOI99Avkfq6voonaS7-Mj6Yra7DBz0QxVIQjD52gJDp_L1Jl2ZHDTcErO-Sd1eDqTKLiJ4iP7pX73lHHsvYOmZ-JKFBK8SA"/>
+<div class="absolute top-2 right-2 px-space-xs py-0.5 rounded-full bg-surface-container-lowest/90 font-label-sm text-label-sm font-semibold text-secondary">
+              USP / EP / NF
+            </div>
+<div class="absolute bottom-2 left-2 px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm">
+              CAS: 9004-34-6
+            </div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Direct Compression</span>
+<h3 class="font-title-md text-title-md text-primary leading-snug">Microcrystalline Cellulose (MCC)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                Available in PH-101 and PH-102 grades. Industry benchmark for direct tablet compressibility, hardness, and disintegration.
+              </p>
+</div>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col gap-1 font-label-sm text-label-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Particle Size (D50):</span>
+<span class="font-semibold text-on-surface">50µm (101) / 100µm (102)</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Standard Unit:</span>
+<span class="font-semibold text-on-surface">20kg / 25kg Kraft Drums</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<a class="flex-1 py-space-xs rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary text-center font-label-md text-label-md uppercase tracking-wider transition-colors" data-path="request-a-quote" href="#">
+                Inquire
+              </a>
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Download Pharma TDS">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pharma 2: Dicalcium Phosphate -->
+<div class="product-technical-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden" data-code="CAS 7757-93-9" data-grade="usp fcc" data-name="Dicalcium Phosphate Anhydrous DC">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Dense bright white dicalcium phosphate mineral powder neatly weighed on laboratory precision scale with electronic display, cleanroom environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBV587V1j9W7mEjPenRydTajY5k375BAgs8Y4_Z7IA1SvjBnaGq6CJnUs6Y5Km_6LEydbONkO13JzeX1g8j9z69bfh04V2U-n4JLeuvTZiXWm67cK-2DvfnPkCgA6Uqm2hTgD8xf-VKxQoESUErFf3h-6LX4duHb6QiPyR4OXYORno1Virlr08HP-s1QRWsdm28Pj2iB9rFFtE2sfjjZezmMcVG5vfrECZnuuLDzy8ykPtgkvVWWQ0qQ"/>
+<div class="absolute top-2 right-2 px-space-xs py-0.5 rounded-full bg-surface-container-lowest/90 font-label-sm text-label-sm font-semibold text-secondary">
+              USP / FCC Grade
+            </div>
+<div class="absolute bottom-2 left-2 px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm">
+              CAS: 7757-93-9
+            </div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Mineral Carrier</span>
+<h3 class="font-title-md text-title-md text-primary leading-snug">Dicalcium Phosphate Anhydrous</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                Coarse granular carrier excipient featuring high flowability and dense formulation binding for multivitamin tablets.
+              </p>
+</div>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col gap-1 font-label-sm text-label-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Calcium Content:</span>
+<span class="font-semibold text-on-surface">29.5% - 31.0% Ca</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Standard Unit:</span>
+<span class="font-semibold text-on-surface">25kg Multi-wall Sacks</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<a class="flex-1 py-space-xs rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary text-center font-label-md text-label-md uppercase tracking-wider transition-colors" data-path="request-a-quote" href="#">
+                Inquire
+              </a>
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Download Pharma TDS">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pharma 3: Caffeine Anhydrous -->
+<div class="product-technical-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden" data-code="CAS 58-08-2" data-grade="usp" data-name="Pure USP Crystalline Caffeine Anhydrous">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Microscopic glistening needle shaped crystalline white pure caffeine anhydrous powder in white testing bowl with laboratory spatula on marble." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJsgXAHyNSkFPn6ZBfpj5v3OAym78cx6JOC-4SbgSejeNaHaJTc6xF2pq--5mUWi7A91XlUKue9_J3QgmwudJyNf0N57DB1cUXyjE55etWHOA0-FmpFO0WC7llCvQ1wGS3icGf9ZYukJ_VrbupJ24dZ983J9rzPtlin_WK1KjCOLGQu0-M1U2VcNpslviOnyd4SEA7lmXaKeKkI2Y70GNO73LzT-q2CVncUIPlRzij07dtRTTM14wFGg"/>
+<div class="absolute top-2 right-2 px-space-xs py-0.5 rounded-full bg-surface-container-lowest/90 font-label-sm text-label-sm font-semibold text-secondary">
+              USP / BP Grade
+            </div>
+<div class="absolute bottom-2 left-2 px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm">
+              CAS: 58-08-2
+            </div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Active Ingredient</span>
+<h3 class="font-title-md text-title-md text-primary leading-snug">Pure Crystalline Caffeine USP</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                Synthetic or natural 99.0% anhydrous crystals specifically milled for pre-workout formulas, nootropics, and analgesics.
+              </p>
+</div>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col gap-1 font-label-sm text-label-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Purity Titration:</span>
+<span class="font-semibold text-on-surface">99.0% - 101.0%</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Standard Unit:</span>
+<span class="font-semibold text-on-surface">25kg Fiber Drum w/ Liner</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<a class="flex-1 py-space-xs rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary text-center font-label-md text-label-md uppercase tracking-wider transition-colors" data-path="request-a-quote" href="#">
+                Inquire
+              </a>
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Download Pharma TDS">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pharma 4: Magnesium Stearate -->
+<div class="product-technical-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden" data-code="CAS 557-04-0" data-grade="usp non-gmo" data-name="Magnesium Stearate Vegetable Grade">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Velvety smooth ultra light white magnesium stearate powder poured onto analytical sampling tile in sterile laboratory facility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJdE58GnGZgfaW85ejtdTx4c9cdjQElTYBvjMsnn6sOy2VA-NhtO8AEssoh0imjlD0AEY16zMDbtlkEPVXYjPTW6lbmrJv0jtdMQDDm0bCEY2GTPgMX9SCkxtJEoCvEDNf89e96zkGBD4QW-O080uIgh1XcreBqj3vlQtGR6giF8GCdHB2wXIShVGP6VbX0bqoWvZRGoFoIGEtbQECU4vec77z3MNGATOaXBADK7wAa-RvABD0SOnpAA"/>
+<div class="absolute top-2 right-2 px-space-xs py-0.5 rounded-full bg-surface-container-lowest/90 font-label-sm text-label-sm font-semibold text-secondary">
+              Vegetable / USP / EP
+            </div>
+<div class="absolute bottom-2 left-2 px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm">
+              CAS: 557-04-0
+            </div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Tablet Lubricant</span>
+<h3 class="font-title-md text-title-md text-primary leading-snug">Magnesium Stearate (Vegetable)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                Ultra-pure vegetable-derived anti-adherent and punch lubricant ensuring smooth compression and mold release.
+              </p>
+</div>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col gap-1 font-label-sm text-label-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Stearic Acid Fraction:</span>
+<span class="font-semibold text-on-surface">&gt;40.0% (Ph. Eur.)</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Standard Unit:</span>
+<span class="font-semibold text-on-surface">20kg Bag w/ Moisture Barrier</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<a class="flex-1 py-space-xs rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary text-center font-label-md text-label-md uppercase tracking-wider transition-colors" data-path="request-a-quote" href="#">
+                Inquire
+              </a>
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Download Pharma TDS">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- DIVISION 04: DEHYDRATED FRUITS & BOTANICALS -->
+<!-- ========================================== -->
+<section class="division-block flex flex-col gap-space-md pt-space-lg" data-division="dehydrated">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm pb-space-xs">
+<div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm font-bold text-secondary uppercase tracking-widest">
+<span class="material-symbols-outlined text-[16px]">eco</span>
+<span>Division 04</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary">Natural Dehydrated Produce &amp; Fruit Powders</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+            Controlled low-temperature air-dried and freeze-dried whole botanical slices, dices, flakes, and powders for clean-label foods, teas, and functional snacks.
+          </p>
+</div>
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>100% Botanical Clean Label</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Dehydrated 1: Apple Dices -->
+<div class="product-technical-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden" data-code="Botanical Malus Domestica" data-grade="non-gmo fcc" data-name="Crisp Dehydrated Apple Dices Rings">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Neat arrangement of dried natural apple rings and small diced pieces on textured rustic surface with subtle natural warm lighting, editorial commercial." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3yT0K76Fl93lkXvc6hU-Yvq2cJ5PFX15DggxudeKVw88rmvch4iqF9GIWQDQGGox-oblxwrhSTbjNfNDJVnodXpU6sDdzAKUcMZrp9rwS-Jvs3B1pEUQFxEN4biVSgQGUI9FBp6jDiy0-_LCXkvFbFEdp5CCmShmHgP6IitGhCg99wbGh7njrzT9BS4WyaxH6j9I7jQvs1KNEGYdMDWE_2-hvHaqsddpZYl_Gt05q_sHE-3RZWRzClQ"/>
+<div class="absolute top-2 right-2 px-space-xs py-0.5 rounded-full bg-surface-container-lowest/90 font-label-sm text-label-sm font-semibold text-secondary">
+              Zero Sulfite / Clean
+            </div>
+<div class="absolute bottom-2 left-2 px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm">
+              Malus Domestica
+            </div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Air-Dried Produce</span>
+<h3 class="font-title-md text-title-md text-primary leading-snug">Dehydrated Apple Dices (5-10mm)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                Naturally sweetened, low-moisture orchard apple cubes engineered for breakfast muesli, snack mixes, and bakery fillings.
+              </p>
+</div>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col gap-1 font-label-sm text-label-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Moisture Target:</span>
+<span class="font-semibold text-on-surface">≤ 3.5% Max</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Standard Unit:</span>
+<span class="font-semibold text-on-surface">10kg Carton w/ Foil Liner</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<a class="flex-1 py-space-xs rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary text-center font-label-md text-label-md uppercase tracking-wider transition-colors" data-path="request-a-quote" href="#">
+                Inquire
+              </a>
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Download Produce Specs">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dehydrated 2: Orange Slices -->
+<div class="product-technical-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden" data-code="Botanical Citrus Sinensis" data-grade="non-gmo" data-name="Sun Dried Orange Citrus Slices">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Artisanal translucent sun dried citrus orange wheels and slices arranged geometrically on clean ceramic tray with natural lighting, premium botanical." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHphxBaDKsGdulLu4p3QBOT6vy4nhO5LY4a1jdhIURKS_EKvnvHFilnMnuw4uO5LuXRCY-1BBN1iAgI2v6DELTaK6kv2XV9sSyy2p_UpIVC-9-yxt17kQEGE8-gPTlv06pQG72NiPAu1k27FVwhCSR0C6_Y_xbjEsjX2bPuWA_cQuKIRrG9efsBDwodPcxhDkYfzQCPneZ4z8IAetTRf-fTrWUTIzauFRsxZ3OlARoLQrnPbw2zdsOPQ"/>
+<div class="absolute top-2 right-2 px-space-xs py-0.5 rounded-full bg-surface-container-lowest/90 font-label-sm text-label-sm font-semibold text-secondary">
+              100% Whole Fruit
+            </div>
+<div class="absolute bottom-2 left-2 px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm">
+              Citrus Sinensis
+            </div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Botanical Infusion</span>
+<h3 class="font-title-md text-title-md text-primary leading-snug">Sun-Dried Orange Wheels</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                Uniformly cut dried citrus wheels providing aromatic essential oil release for craft beverage garnishes and loose-leaf herbal teas.
+              </p>
+</div>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col gap-1 font-label-sm text-label-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Thickness:</span>
+<span class="font-semibold text-on-surface">3mm - 4mm Calibrated</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Standard Unit:</span>
+<span class="font-semibold text-on-surface">5kg Bulk Food Grade Box</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<a class="flex-1 py-space-xs rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary text-center font-label-md text-label-md uppercase tracking-wider transition-colors" data-path="request-a-quote" href="#">
+                Inquire
+              </a>
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Download Produce Specs">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dehydrated 3: Carrot Granules -->
+<div class="product-technical-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden" data-code="Botanical Daucus Carota" data-grade="non-gmo fcc" data-name="Dehydrated Carrot Granules Flakes">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Vivid orange dehydrated carrot granules and small flakes placed in pure white ceramic crucible with scattered particles on white stone backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfUg8YTxm8kYym8pJs_JFQYUnb8N67g2zK3TwdoTXV-inrfbemVyv5wTph_9S4Ts537nPQn4cFiHdMwbCbsStUdylV_2tFw1vHklLlj8g-XxmGJtjPuh65OBgAv7kjap6nqFB7LoPxADjV1e0WwHNEvs09GBZyK9ERaq4fDxy6fwCd910jIKt-JuE-vi2NLSdc3xBs6TDYzI52jvGGizihHRPduwTMl55irT1E3WPgRUXM-Po6gRk7fw"/>
+<div class="absolute top-2 right-2 px-space-xs py-0.5 rounded-full bg-surface-container-lowest/90 font-label-sm text-label-sm font-semibold text-secondary">
+              Beta-Carotene Rich
+            </div>
+<div class="absolute bottom-2 left-2 px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm">
+              Daucus Carota
+            </div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Culinary Ingredient</span>
+<h3 class="font-title-md text-title-md text-primary leading-snug">Dehydrated Carrot Flakes (3x3)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                Rapid-rehydration root vegetable cut for dry soup bases, bouillon cubes, seasoning blends, and prepared meals.
+              </p>
+</div>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col gap-1 font-label-sm text-label-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Rehydration Ratio:</span>
+<span class="font-semibold text-on-surface">1 : 4 within 5 minutes</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Standard Unit:</span>
+<span class="font-semibold text-on-surface">20kg Double Poly Bags</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<a class="flex-1 py-space-xs rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary text-center font-label-md text-label-md uppercase tracking-wider transition-colors" data-path="request-a-quote" href="#">
+                Inquire
+              </a>
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Download Produce Specs">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dehydrated 4: Freeze-Dried Berries -->
+<div class="product-technical-card bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden" data-code="Botanical Vaccinium Corymbosum" data-grade="non-gmo organic" data-name="Freeze Dried Whole Blueberries Cranberries">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Deep purple whole freeze dried blueberries in pristine white porcelain bowl showing crisp delicate cellular fruit structure, studio macro." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3lYcCWT2fshpEWfUelnew8EBqEQ9-RLlPcuTZa_Ia-Fj3nx7RGMPoIduvIRuX6XAI6JVGgq6Bt5i8o4owDSZJeMvS4BprTMvw2nj4mX24nDIr7Lfz_Obxq1RH_X0s3_Yy3iHT1W2h0QJnF1c70Sp2i0or_zU1Ou9thFZaHF1ygzZoQpFLRCJHC7Q38nFkE0S9R3nfnEAqUlKiwnzgS_YtkSNqYQ6kEd5HY8zy4RYmdlBybC72grI8BA"/>
+<div class="absolute top-2 right-2 px-space-xs py-0.5 rounded-full bg-surface-container-lowest/90 font-label-sm text-label-sm font-semibold text-secondary">
+              Freeze-Dried 100%
+            </div>
+<div class="absolute bottom-2 left-2 px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm">
+              Vaccinium Spp.
+            </div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Premium Freeze-Dried</span>
+<h3 class="font-title-md text-title-md text-primary leading-snug">Whole Freeze-Dried Blueberries</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                Sublimation dried to preserve 98% of natural anthocyanins, vivid color, original round spherical form, and tart flavor.
+              </p>
+</div>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col gap-1 font-label-sm text-label-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Moisture Content:</span>
+<span class="font-semibold text-on-surface">≤ 2.0% Maximum</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Standard Unit:</span>
+<span class="font-semibold text-on-surface">10kg Nitrogen Flushed Box</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<a class="flex-1 py-space-xs rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary text-center font-label-md text-label-md uppercase tracking-wider transition-colors" data-path="request-a-quote" href="#">
+                Inquire
+              </a>
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Download Produce Specs">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- B2B SAMPLING PROGRAM & R&D FAST TRACK -->
+<!-- ========================================== -->
+<section class="w-full bg-surface-container-high rounded-xl p-space-lg md:p-space-xl relative overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center relative z-10">
+<div class="lg:col-span-8 flex flex-col gap-space-sm">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-secondary-container text-on-secondary-container w-fit font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">speed</span>
+<span>R&amp;D Lab Express Dispatch</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary">Need Formulation Samples for Lab Trials?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            We provide verified 100g – 1kg bench trial samples for qualifying food scientists, pharmaceutical compounding formulators, and cosmetic chemists. All sample dispatches include a Certificate of Analysis (CoA) and full batch allergen declarations.
+          </p>
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs font-label-md text-label-md text-on-surface">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">check</span>
+<span>Dispatched within 48 Hours</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">check</span>
+<span>Regulatory Dossiers Included</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">check</span>
+<span>Global Courier Tracking</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-space-sm">
+<a class="w-full py-space-sm px-space-md rounded bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider text-center transition-all shadow-md" data-path="request-a-quote" href="#">
+            Order R&amp;D Sample Kit
+          </a>
+<a class="w-full py-space-sm px-space-md rounded bg-surface-container-lowest hover:bg-surface text-primary font-label-md text-label-md uppercase tracking-wider text-center transition-all" data-path="contact" href="#">
+            Consult Formulator Chemist
+          </a>
+</div>
+</div>
+</section>
+</div>
+</div></main><footer class="w-full bg-primary-container text-on-primary-fixed-variant pt-space-xl pb-space-lg"><div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl pb-space-xl"><div class="flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><img alt="HAMD Essentials Logo" class="h-8 w-auto object-contain brightness-0 invert" src="https://lh3.googleusercontent.com/aida/AEtjO1XJBaPX5AOWyeUmjcK73h8zuzAlmrRW2uojK-lGr6dkBRW2XlIdG-6h2Q-t-RcIkJwioVErC_Nq6glboatwlUKU1hfTsvIE1mSwPPqksb1EgQFDLIUcuBgCiIlgjiC-xDP5IR5uPBI3Nuj_OEq-X3IIE1Boo0j1bkTg3YNba6Bc0ddYyrL8aJ7qeU7xoic0mQD_O-nqBzK0rh5nZqzjT5hRcamP92NavQ7kJu_hUaOEXWl7jgj_y8PgxN4"/><span class="font-headline-sm text-headline-sm text-on-primary tracking-tight">HAMD ESSENTIALS</span></div><p class="font-body-md text-body-md text-on-primary-container leading-relaxed">A subsidiary of Hamd Chemicals. Leading international supplier of food chemicals, vibrant food colours, active pharmaceutical &amp; nutraceutical ingredients, and natural dehydrated produce.</p><div class="flex items-center gap-space-xs font-label-sm text-label-sm text-tertiary-fixed font-semibold tracking-wider uppercase"><span class="material-symbols-outlined text-[16px]">verified</span>Certified ISO 9001, HACCP, GMP &amp; Halal</div></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-primary font-semibold">Product Divisions</span><ul class="flex flex-col gap-space-xs font-body-md text-body-md text-on-primary-container pt-space-xs"><li><a class="hover:text-tertiary-fixed transition-colors" data-path="products-and-categories" href="#">Food Chemicals</a></li><li><a class="hover:text-tertiary-fixed transition-colors" data-path="products-and-categories" href="#">Food Colours (Natural &amp; Synthetic)</a></li><li><a class="hover:text-tertiary-fixed transition-colors" data-path="products-and-categories" href="#">Pharmaceutical &amp; Nutraceutical</a></li><li><a class="hover:text-tertiary-fixed transition-colors" data-path="products-and-categories" href="#">Dehydrated Fruits &amp; Vegetables</a></li><li><a class="hover:text-tertiary-fixed transition-colors" data-path="products-and-categories" href="#">Custom Blending &amp; Milling</a></li></ul></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-primary font-semibold">Quality &amp; Assurance</span><ul class="flex flex-col gap-space-xs font-body-md text-body-md text-on-primary-container pt-space-xs"><li><a class="hover:text-tertiary-fixed transition-colors" data-path="quality-and-compliance" href="#">Technical Data Sheets (TDS)</a></li><li><a class="hover:text-tertiary-fixed transition-colors" data-path="quality-and-compliance" href="#">Certificate of Analysis (CoA) Portal</a></li><li><a class="hover:text-tertiary-fixed transition-colors" data-path="quality-and-compliance" href="#">Quality Control Laboratory</a></li><li><a class="hover:text-tertiary-fixed transition-colors" data-path="quality-and-compliance" href="#">Regulatory Compliance</a></li><li><a class="hover:text-tertiary-fixed transition-colors" data-path="request-a-quote" href="#">B2B Sample Request</a></li></ul></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-primary font-semibold">Global Headquarters</span><div class="flex flex-col gap-space-xs font-body-md text-body-md text-on-primary-container pt-space-xs"><p class="text-on-primary-fixed">Hamd Corporate Towers, Industrial Zone Blvd, Suite 800</p><p class="text-on-primary-fixed">Direct B2B Sales: +1 (800) 555-HAMD</p><p class="text-on-primary-fixed">Email: inquiries@hamdessentials.com</p><div class="pt-space-xs"><a class="inline-flex items-center text-tertiary-fixed hover:text-on-primary font-label-md text-label-md uppercase tracking-wider transition-colors" data-path="request-a-quote" href="#">Enter B2B Quotation Portal<span class="material-symbols-outlined ml-space-xs text-[16px]">arrow_forward</span></a></div></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-label-sm text-label-sm text-on-primary-container"><p>© 2025 HAMD Essentials. All rights reserved. Built on Hamd Chemicals' 30-Year Legacy of Excellence.</p><div class="flex items-center gap-space-md"><a class="hover:text-tertiary-fixed transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="hover:text-tertiary-fixed transition-colors" data-path="terms-of-supply" href="#">Terms of Supply</a><a class="hover:text-tertiary-fixed transition-colors" data-path="contact" href="#">Regulatory Inquiries</a></div></div></div></footer></body></html>

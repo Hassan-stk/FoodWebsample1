@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OmniSync | Marketplace Finance &amp; Reconciliation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid #1E293B;
+            backdrop-filter: blur(24px) saturate(150%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0b1326;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 10px;
+        }
+        .chart-gradient {
+            background: linear-gradient(180deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 102, 255, 0) 100%);
+        }
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        .active-glow {
+            box-shadow: 0 0 15px rgba(0, 102, 255, 0.3);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#472a00",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "surface-dim": "#0b1326",
+                        "primary-container": "#0066ff",
+                        "primary": "#b3c5ff",
+                        "on-primary": "#002b75",
+                        "error-container": "#93000a",
+                        "surface": "#0b1326",
+                        "surface-container-highest": "#2d3449",
+                        "on-primary-fixed-variant": "#003fa4",
+                        "background": "#0b1326",
+                        "tertiary": "#ffb95f",
+                        "on-surface": "#dae2fd",
+                        "secondary-fixed-dim": "#4edea3",
+                        "primary-fixed": "#dae1ff",
+                        "on-tertiary-container": "#fff7f1",
+                        "on-primary-fixed": "#001849",
+                        "inverse-on-surface": "#283044",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#31394d",
+                        "on-secondary": "#003824",
+                        "inverse-primary": "#0054d6",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "on-background": "#dae2fd",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container": "#171f33",
+                        "secondary-container": "#00a572",
+                        "surface-container-lowest": "#060e20",
+                        "on-surface-variant": "#c2c6d8",
+                        "on-secondary-fixed": "#002113",
+                        "inverse-surface": "#dae2fd",
+                        "on-error": "#690005",
+                        "surface-container-low": "#131b2e",
+                        "secondary": "#4edea3",
+                        "surface-tint": "#b3c5ff",
+                        "outline": "#8c90a1",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#005236",
+                        "tertiary-container": "#a06500",
+                        "on-secondary-container": "#00311f",
+                        "surface-container-high": "#222a3d",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface-variant": "#2d3449",
+                        "on-primary-container": "#f8f7ff",
+                        "outline-variant": "#424656"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "container-max": "1440px",
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Inter"],
+                        "data-tabular": ["JetBrains Mono"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "data-tabular": ["13px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "label-caps": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary/30">
+<!-- WebGL Background -->
+
+<!-- Side Navigation Shell -->
+<aside class="fixed left-0 top-0 h-screen w-[240px] border-r border-outline-variant bg-surface-container/80 backdrop-blur-3xl shadow-sm flex flex-col p-4 z-50">
+<div class="mb-8">
+<span class="font-headline-md text-headline-md font-bold text-primary">OmniSync</span>
+<p class="text-[10px] text-outline uppercase tracking-widest mt-1">Global View</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-body-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="hub">hub</span>
+<span class="font-body-md">Marketplaces</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 bg-primary-container text-on-primary-container rounded-lg active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-body-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto p-4 glass-panel rounded-xl">
+<p class="text-[10px] text-outline mb-2">WORKSPACE</p>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary/20 flex items-center justify-center border border-primary/30">
+<span class="material-symbols-outlined text-sm text-primary">account_balance</span>
+</div>
+<div>
+<p class="text-xs font-bold truncate">KSA Logistics Unit</p>
+<p class="text-[10px] text-outline">SAR Accounts</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Top App Bar -->
+<header class="fixed top-0 right-0 left-[240px] z-40 flex justify-between items-center px-margin-desktop h-16 border-b border-outline-variant bg-surface/80 backdrop-blur-3xl shadow-md">
+<div class="flex items-center gap-6">
+<div class="relative w-80">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg pl-10 pr-4 py-1.5 text-sm focus:border-primary focus:ring-0" placeholder="Search transactions..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-opacity cursor-pointer">sync</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-opacity cursor-pointer">notifications</button>
+<div class="h-8 w-px bg-outline-variant mx-2"></div>
+<div class="flex items-center gap-3 cursor-pointer">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a financial operations manager for a high-end enterprise marketplace based in the Kingdom of Saudi Arabia. The lighting is crisp and corporate, set against a blurred modern office background with deep blue and slate grey tones. The portrait is minimalist and conveys authority and technological proficiency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2RYyy6i0BNxiqvCCaFF-nzIPLLemvGJBgAd0xGEZ0ZciW_kBgj4nIMZytV-37Azca0zhJCXAkFgJoisQYHRNgkdtcot6nZS_fdy4MOZSKhuEcN1B86HLA0XH5-Z7-KN5hwYfp1Yi-95pkoz65xLcdgO7k946fwXrCzpQDVDJ1cbDZ8K9A1oUkct0bzs0KN9k3LAGe6UWzSvsXqffRptsFlCm3icGCXjSALIHEy4JnTU9o1gLSa4YKLTPeZeyrv1iyjQnWW_0m684E"/>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-[240px] pt-24 px-margin-desktop pb-12 relative z-10 min-h-screen">
+<!-- Header & Date Range -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h1 class="font-display-lg text-display-lg text-on-surface">Financial Reconciliation</h1>
+<p class="text-on-surface-variant mt-1 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                    Kingdom of Saudi Arabia • SAR Base Currency
+                </p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 glass-panel rounded-lg flex items-center gap-2 text-sm hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                    Oct 01 - Oct 31, 2023
+                </button>
+<button class="px-4 py-2 bg-primary-container text-on-primary-container rounded-lg font-bold text-sm flex items-center gap-2 active:scale-95 transition-transform shadow-lg shadow-primary-container/20">
+<span class="material-symbols-outlined text-sm">download</span>
+                    Export Statement
+                </button>
+</div>
+</div>
+<!-- Bento Stats Grid -->
+<div class="grid grid-cols-4 gap-gutter mb-8">
+<div class="glass-panel p-6 rounded-xl flex flex-col justify-between border-l-4 border-l-primary">
+<div class="flex justify-between items-start mb-4">
+<span class="text-label-caps text-outline uppercase">Net Payout</span>
+<span class="material-symbols-outlined text-primary" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<h3 class="font-display-lg text-3xl font-black text-on-surface">SAR 142,509.00</h3>
+<p class="text-secondary text-xs font-bold mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]">trending_up</span>
+                        +12.5% from last month
+                    </p>
+</div>
+</div>
+<div class="glass-panel p-6 rounded-xl flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<span class="text-label-caps text-outline uppercase">Marketplace Fees</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="receipt">receipt</span>
+</div>
+<div>
+<h3 class="font-display-lg text-3xl font-black text-on-surface">SAR 18,242.45</h3>
+<p class="text-error text-xs font-bold mt-1">Avg. 15.2% Commission</p>
+</div>
+</div>
+<div class="glass-panel p-6 rounded-xl flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<span class="text-label-caps text-outline uppercase">VAT (15%)</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="account_balance">account_balance</span>
+</div>
+<div>
+<h3 class="font-display-lg text-3xl font-black text-on-surface">SAR 21,376.35</h3>
+<p class="text-on-surface-variant text-xs mt-1">ZATCA Compliant</p>
+</div>
+</div>
+<div class="glass-panel p-6 rounded-xl flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<span class="text-label-caps text-outline uppercase">Shipping Costs</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<h3 class="font-display-lg text-3xl font-black text-on-surface">SAR 8,112.20</h3>
+<p class="text-secondary text-xs font-bold mt-1">Optimized Logistics</p>
+</div>
+</div>
+</div>
+<!-- Main Dashboard Layout -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Performance & Ledger Section -->
+<div class="col-span-8 space-y-gutter">
+<!-- Profit Margin Chart -->
+<div class="glass-panel p-6 rounded-xl overflow-hidden relative">
+<div class="flex justify-between items-center mb-6">
+<h4 class="font-headline-sm text-headline-sm">Profit Margin Trends</h4>
+<div class="flex gap-2">
+<span class="flex items-center gap-1 text-xs text-secondary font-bold">
+<div class="w-2 h-2 rounded-full bg-secondary"></div> Net Profit
+                            </span>
+<span class="flex items-center gap-1 text-xs text-primary font-bold">
+<div class="w-2 h-2 rounded-full bg-primary"></div> Revenue
+                            </span>
+</div>
+</div>
+<div class="h-64 flex items-end gap-2 relative">
+<!-- Chart Grid Lines -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-10">
+<div class="w-full border-t border-white"></div>
+<div class="w-full border-t border-white"></div>
+<div class="w-full border-t border-white"></div>
+<div class="w-full border-t border-white"></div>
+</div>
+<!-- Mock Data Bars -->
+<div class="flex-1 flex flex-col items-center justify-end group gap-1">
+<div class="w-full bg-primary/20 hover:bg-primary/40 rounded-t-sm h-[60%] transition-all duration-300 relative">
+<div class="absolute inset-x-0 bottom-0 h-[40%] bg-secondary/40 rounded-t-sm"></div>
+</div>
+<span class="text-[10px] text-outline font-bold">JAN</span>
+</div>
+<div class="flex-1 flex flex-col items-center justify-end group gap-1">
+<div class="w-full bg-primary/20 hover:bg-primary/40 rounded-t-sm h-[75%] transition-all duration-300 relative">
+<div class="absolute inset-x-0 bottom-0 h-[45%] bg-secondary/40 rounded-t-sm"></div>
+</div>
+<span class="text-[10px] text-outline font-bold">FEB</span>
+</div>
+<div class="flex-1 flex flex-col items-center justify-end group gap-1">
+<div class="w-full bg-primary/20 hover:bg-primary/40 rounded-t-sm h-[65%] transition-all duration-300 relative">
+<div class="absolute inset-x-0 bottom-0 h-[38%] bg-secondary/40 rounded-t-sm"></div>
+</div>
+<span class="text-[10px] text-outline font-bold">MAR</span>
+</div>
+<div class="flex-1 flex flex-col items-center justify-end group gap-1">
+<div class="w-full bg-primary/20 hover:bg-primary/40 rounded-t-sm h-[90%] transition-all duration-300 relative active-glow">
+<div class="absolute inset-x-0 bottom-0 h-[55%] bg-secondary/40 rounded-t-sm"></div>
+</div>
+<span class="text-[10px] text-primary font-bold">APR</span>
+</div>
+<div class="flex-1 flex flex-col items-center justify-end group gap-1">
+<div class="w-full bg-primary/20 hover:bg-primary/40 rounded-t-sm h-[80%] transition-all duration-300 relative">
+<div class="absolute inset-x-0 bottom-0 h-[48%] bg-secondary/40 rounded-t-sm"></div>
+</div>
+<span class="text-[10px] text-outline font-bold">MAY</span>
+</div>
+<div class="flex-1 flex flex-col items-center justify-end group gap-1">
+<div class="w-full bg-primary/20 hover:bg-primary/40 rounded-t-sm h-[85%] transition-all duration-300 relative">
+<div class="absolute inset-x-0 bottom-0 h-[52%] bg-secondary/40 rounded-t-sm"></div>
+</div>
+<span class="text-[10px] text-outline font-bold">JUN</span>
+</div>
+</div>
+</div>
+<!-- Transaction Ledger -->
+<div class="glass-panel rounded-xl overflow-hidden">
+<div class="p-6 border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+<h4 class="font-headline-sm text-headline-sm">Transaction Ledger</h4>
+<div class="flex gap-2">
+<select class="bg-surface-container-lowest border border-outline-variant rounded-lg text-xs font-bold py-1 px-3">
+<option>All Marketplaces</option>
+<option>Amazon KSA</option>
+<option>Noon</option>
+<option>Salla</option>
+</select>
+<button class="p-2 glass-panel rounded-lg flex items-center justify-center hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high/50 border-b border-outline-variant">
+<th class="p-4 text-label-caps text-outline uppercase">Date &amp; ID</th>
+<th class="p-4 text-label-caps text-outline uppercase">Marketplace</th>
+<th class="p-4 text-label-caps text-outline uppercase">Gross Sales</th>
+<th class="p-4 text-label-caps text-outline uppercase">Total Fees</th>
+<th class="p-4 text-label-caps text-outline uppercase">Net Payout</th>
+<th class="p-4 text-label-caps text-outline uppercase text-center">Status</th>
+</tr>
+</thead>
+<tbody class="text-sm font-data-tabular">
+<tr class="border-b border-outline-variant hover:bg-white/5 transition-colors">
+<td class="p-4">
+<div class="font-bold">Oct 24, 2023</div>
+<div class="text-[10px] text-outline">TX-98231-SA</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-white p-0.5">
+<img class="w-full h-full object-contain" data-alt="A minimalist vector logo of a large globally known e-commerce marketplace platform, predominantly using bright colors like yellow or orange, set against a circular white background. High contrast, clean lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7nqoAxM6lOXE_gSCXtsTTedRqhmfnA1CD-eqxZoTU8Yd5bQ99ZHPQ3fDP0cLfTKa6t7K4FR4Rw8RWzVRBAiQVl6Ekey4sG311Lvblt0fmn24AwZb3X0dc1sXyeXHovsNa1mzZFTrs-LGKqT_4vnDElldhuwn1FE-lOwXuaOfPorIAvrRh0H3tJfu-hEfibbtadZvfFY931TUJDSnZzN0dxkIF8hfmFwISxy3qUvM0FPvgQTYoCnbuP5tPzyD0iF6sIAVotVEU2E4n"/>
+</div>
+<span>Amazon KSA</span>
+</div>
+</td>
+<td class="p-4">SAR 4,200.00</td>
+<td class="p-4 text-error">SAR -840.00</td>
+<td class="p-4 text-secondary font-bold">SAR 3,360.00</td>
+<td class="p-4 text-center">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/20 text-secondary text-[10px] font-bold border border-secondary/20">Settled</span>
+</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-white/5 transition-colors">
+<td class="p-4">
+<div class="font-bold">Oct 23, 2023</div>
+<div class="text-[10px] text-outline">TX-98212-SA</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-white p-0.5">
+<img class="w-full h-full object-contain" data-alt="A clean icon representing a popular Middle Eastern marketplace, styled as a modern minimalist square with vibrant yellow and black accents. Vector style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDet6hlh_Vo7SaLhvV2LZIs_n6OGisTs8Em01R9e7IWlZs5L2zJ9DpQ5eO9suZiGBkE1m1MywYT1BnWS70CQDwoGL0OjUTDoHd0PnAFvTlu3UrlJyoJFpMmmoiPNfPu0OTRWnPs421BRrWH5jUvJbdblR5llwmddpexIK7l-krb1tukgFySwRaZthEfQ2GZ2rbZ6w2--UNeDzNkzOiNGiMOtOOjHU5Dbwf_tS9iexOofmvyV5D9yfeDG8TmWDSJr8ZbAxmNTQ4Gn3FV"/>
+</div>
+<span>Noon</span>
+</div>
+</td>
+<td class="p-4">SAR 1,850.50</td>
+<td class="p-4 text-error">SAR -277.50</td>
+<td class="p-4 text-secondary font-bold">SAR 1,573.00</td>
+<td class="p-4 text-center">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary text-[10px] font-bold border border-tertiary/20">Pending</span>
+</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-white/5 transition-colors">
+<td class="p-4">
+<div class="font-bold">Oct 22, 2023</div>
+<div class="text-[10px] text-outline">TX-98198-SA</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary p-1">
+<span class="material-symbols-outlined text-xs text-on-primary">shopping_bag</span>
+</div>
+<span>Salla (DTC)</span>
+</div>
+</td>
+<td class="p-4">SAR 12,400.00</td>
+<td class="p-4 text-error">SAR -620.00</td>
+<td class="p-4 text-secondary font-bold">SAR 11,780.00</td>
+<td class="p-4 text-center">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/20 text-secondary text-[10px] font-bold border border-secondary/20">Settled</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Side Sidebar: Finance Notes & Market Breakdown -->
+<div class="col-span-4 space-y-gutter">
+<!-- Marketplace Breakdown -->
+<div class="glass-panel p-6 rounded-xl">
+<h4 class="font-headline-sm text-headline-sm mb-4">Volume by Platform</h4>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-xs mb-2">
+<span class="font-bold">Amazon KSA</span>
+<span class="text-outline">45%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[45%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs mb-2">
+<span class="font-bold">Noon</span>
+<span class="text-outline">32%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[32%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs mb-2">
+<span class="font-bold">Salla Store</span>
+<span class="text-outline">23%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[23%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Finance Notes Section -->
+<div class="glass-panel p-6 rounded-xl flex flex-col h-[480px]">
+<div class="flex items-center justify-between mb-4">
+<h4 class="font-headline-sm text-headline-sm">Finance Notes</h4>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">edit_note</span>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar space-y-4 pr-2">
+<!-- Note Item -->
+<div class="p-3 rounded-lg bg-surface-container-low border border-outline-variant">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center">
+<span class="text-[10px] font-bold text-secondary">AM</span>
+</div>
+<span class="text-[10px] font-bold">Ahmed M.</span>
+<span class="text-[9px] text-outline ml-auto">2h ago</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+<span class="text-primary font-bold">@Sarah_Audit</span> Checked the Noon settlement for Oct 23. VAT calculation matches the portal export. Ready for reconciliation.
+                            </p>
+</div>
+<!-- Note Item -->
+<div class="p-3 rounded-lg bg-surface-container-low border border-outline-variant">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="text-[10px] font-bold text-primary">SK</span>
+</div>
+<span class="text-[10px] font-bold">Sarah K.</span>
+<span class="text-[9px] text-outline ml-auto">5h ago</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                                Identified a shipping cost discrepancy on order #TX-98198. Waiting for response from the logistics provider.
+                            </p>
+</div>
+<!-- Note Item -->
+<div class="p-3 rounded-lg bg-surface-container-low border border-outline-variant">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-5 h-5 rounded-full bg-tertiary/20 flex items-center justify-center">
+<span class="text-[10px] font-bold text-tertiary">RB</span>
+</div>
+<span class="text-[10px] font-bold">Ray B.</span>
+<span class="text-[9px] text-outline ml-auto">Yesterday</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                                Monthly report for ZATCA filing is prepared. Please review before final submission on Thursday.
+                            </p>
+</div>
+</div>
+<div class="mt-4 relative">
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-3 text-xs focus:border-primary focus:ring-0 min-h-[80px] resize-none" placeholder="Tag team with @..."></textarea>
+<button class="absolute bottom-3 right-3 material-symbols-outlined text-primary bg-primary/10 p-1 rounded hover:bg-primary/20">send</button>
+</div>
+</div>
+<!-- Currency Quick Convert -->
+<div class="glass-panel p-4 rounded-xl bg-gradient-to-br from-primary/5 to-transparent">
+<div class="flex items-center justify-between text-xs font-bold text-outline uppercase tracking-wider mb-2">
+<span>Live Rates</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-sm font-data-tabular">1 SAR = <span class="text-on-surface">0.27 USD</span></div>
+<div class="text-sm font-data-tabular">1 SAR = <span class="text-on-surface">0.25 EUR</span></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Micro-interaction Scripts -->
+<script>
+        // Simple scale effect for stat cards on hover
+        document.querySelectorAll('.glass-panel').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                if (card.classList.contains('p-6')) {
+                    card.style.transform = 'translateY(-2px)';
+                    card.style.transition = 'transform 0.2s ease-out';
+                }
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Search Bar animation
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('w-96');
+            searchInput.parentElement.style.transition = 'width 0.3s ease-in-out';
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('w-96');
+        });
+    </script>
+</body></html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OmniSync | Operations &amp; Integrations - KSA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#a06500",
+                    "surface": "#0b1326",
+                    "inverse-surface": "#dae2fd",
+                    "on-surface-variant": "#c2c6d8",
+                    "on-background": "#dae2fd",
+                    "surface-container-low": "#131b2e",
+                    "primary": "#b3c5ff",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffddb8",
+                    "surface-container-high": "#222a3d",
+                    "on-tertiary-fixed": "#2a1700",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "on-error": "#690005",
+                    "on-surface": "#dae2fd",
+                    "on-primary-container": "#f8f7ff",
+                    "surface-container-lowest": "#060e20",
+                    "outline-variant": "#424656",
+                    "background": "#0b1326",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-primary-fixed-variant": "#003fa4",
+                    "on-secondary-fixed-variant": "#005236",
+                    "primary-fixed": "#dae1ff",
+                    "primary-container": "#0066ff",
+                    "on-secondary-fixed": "#002113",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "on-tertiary": "#472a00",
+                    "on-secondary": "#003824",
+                    "surface-tint": "#b3c5ff",
+                    "secondary": "#4edea3",
+                    "surface-bright": "#31394d",
+                    "surface-variant": "#2d3449",
+                    "surface-container-highest": "#2d3449",
+                    "surface-container": "#171f33",
+                    "on-secondary-container": "#00311f",
+                    "error": "#ffb4ab",
+                    "on-primary-fixed": "#001849",
+                    "inverse-on-surface": "#283044",
+                    "on-primary": "#002b75",
+                    "on-tertiary-container": "#fff7f1",
+                    "tertiary": "#ffb95f",
+                    "primary-fixed-dim": "#b3c5ff",
+                    "inverse-primary": "#0054d6",
+                    "secondary-container": "#00a572",
+                    "outline": "#8c90a1",
+                    "error-container": "#93000a",
+                    "surface-dim": "#0b1326",
+                    "secondary-fixed": "#6ffbbe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "margin-mobile": "16px",
+                    "unit": "4px",
+                    "gutter": "16px",
+                    "margin-desktop": "32px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "data-tabular": ["JetBrains Mono"],
+                    "body-md": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "headline-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "data-tabular": ["13px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-caps": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #020617;
+            color: #dae2fd;
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid #1e293b;
+            backdrop-filter: blur(24px) saturate(150%);
+        }
+        .active-glow {
+            box-shadow: 0 0 20px rgba(0, 102, 255, 0.3);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .status-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-hidden">
+<!-- Side Navigation Shell -->
+<aside class="fixed left-0 top-0 h-screen w-[240px] border-r border-outline-variant bg-surface-container/80 backdrop-blur-3xl shadow-sm z-50 flex flex-col p-4">
+<div class="mb-8">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">OmniSync</h1>
+<p class="text-on-surface-variant text-xs">Middle East Regional View</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span>Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 bg-primary-container text-on-primary-container rounded-lg active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">hub</span>
+<span>Marketplaces</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-4 border-t border-outline-variant">
+<button class="w-full flex items-center justify-center gap-2 px-4 py-2 bg-surface-variant text-on-surface rounded-lg hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">swap_horiz</span>
+<span>Switch Workspace</span>
+</button>
+</div>
+</aside>
+<!-- Top App Bar -->
+<header class="fixed top-0 right-0 left-[240px] z-40 flex justify-between items-center px-margin-desktop h-16 bg-surface/80 backdrop-blur-3xl border-b border-outline-variant shadow-md">
+<div class="flex items-center gap-6">
+<div class="relative group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">search</span>
+<input class="bg-surface-container-lowest border border-outline-variant rounded-lg pl-10 pr-4 py-1.5 w-64 text-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search KSA marketplaces..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">sync</button>
+<div class="relative">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">notifications</button>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+</div>
+<div class="h-8 w-8 rounded-full bg-primary-container flex items-center justify-center cursor-pointer hover:opacity-80">
+<span class="material-symbols-outlined text-on-primary-container">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-[240px] mt-16 p-margin-desktop h-[calc(100vh-64px)] overflow-y-auto space-y-gutter">
+<!-- Hero Section: Data Sync Health -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<div class="lg:col-span-2 glass-panel p-6 rounded-xl relative overflow-hidden">
+<div class="flex justify-between items-center mb-6">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-1">Regional Health Monitor</h2>
+<p class="text-on-surface-variant font-body-md">Middle East API availability and latency across Saudi &amp; UAE nodes.</p>
+</div>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary/10 text-secondary border border-secondary/20 rounded-full text-label-caps flex items-center gap-2">
+<span class="w-2 h-2 bg-secondary rounded-full status-pulse"></span>
+                            OPERATIONAL
+                        </span>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-4 h-32 items-end">
+<div class="bg-primary/20 h-full rounded-t-lg relative group">
+<div class="absolute bottom-0 w-full bg-primary h-[94%] rounded-t-lg transition-all duration-500 group-hover:h-[96%]"></div>
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-label-caps opacity-0 group-hover:opacity-100 transition-opacity">99.4%</div>
+</div>
+<div class="bg-primary/20 h-full rounded-t-lg relative group">
+<div class="absolute bottom-0 w-full bg-primary h-[89%] rounded-t-lg transition-all duration-500 group-hover:h-[92%]"></div>
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-label-caps opacity-0 group-hover:opacity-100 transition-opacity">98.2%</div>
+</div>
+<div class="bg-primary/20 h-full rounded-t-lg relative group">
+<div class="absolute bottom-0 w-full bg-secondary h-[98%] rounded-t-lg transition-all duration-500 group-hover:h-[100%]"></div>
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-label-caps opacity-0 group-hover:opacity-100 transition-opacity">99.9%</div>
+</div>
+<div class="bg-primary/20 h-full rounded-t-lg relative group">
+<div class="absolute bottom-0 w-full bg-primary h-[91%] rounded-t-lg transition-all duration-500 group-hover:h-[94%]"></div>
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-label-caps opacity-0 group-hover:opacity-100 transition-opacity">99.1%</div>
+</div>
+</div>
+<div class="flex justify-between mt-2 text-label-caps text-outline">
+<span>KSA-WEST-1</span>
+<span>KSA-CENTRAL-1</span>
+<span>ME-SOUTH-1</span>
+<span>KSA-EAST-1</span>
+</div>
+</div>
+<div class="glass-panel p-6 rounded-xl flex flex-col justify-between">
+<div>
+<h3 class="font-label-caps text-outline mb-4">REGIONAL LATENCY (KSA)</h3>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-secondary">18ms</span>
+<span class="text-secondary/60 text-body-md">avg</span>
+</div>
+<p class="text-on-surface-variant mt-2 text-body-md">Local Riyadh peering active. 40% improvement in last 12h.</p>
+</div>
+<div class="h-1 bg-surface-container-high rounded-full overflow-hidden mt-6">
+<div class="h-full bg-secondary w-[85%] shadow-[0_0_10px_rgba(78,222,163,0.5)]"></div>
+</div>
+</div>
+</section>
+<!-- Marketplace Connection Cards -->
+<section class="space-y-4">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Marketplace Connections (Saudi Arabia)</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Amazon.sa Card -->
+<div class="glass-panel rounded-xl p-6 group hover:border-primary transition-all">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 bg-surface-container-high rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">shopping_cart</span>
+</div>
+<span class="px-2 py-1 bg-secondary/10 text-secondary text-label-caps border border-secondary/20 rounded-lg">CONNECTED</span>
+</div>
+<h3 class="font-headline-sm text-on-surface">Amazon.sa (FBA)</h3>
+<div class="mt-4 space-y-2">
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span>Last Sync</span>
+<span class="font-data-tabular">1 min ago</span>
+</div>
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span>SKUs Tracked</span>
+<span class="font-data-tabular">8,124</span>
+</div>
+</div>
+<button class="mt-6 w-full py-2 border border-outline-variant rounded-lg text-body-md hover:bg-surface-variant transition-colors">Configure KSA API</button>
+</div>
+<!-- Noon.com KSA Card -->
+<div class="glass-panel rounded-xl p-6 group hover:border-primary transition-all">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 bg-surface-container-high rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">local_mall</span>
+</div>
+<span class="px-2 py-1 bg-secondary/10 text-secondary text-label-caps border border-secondary/20 rounded-lg">CONNECTED</span>
+</div>
+<h3 class="font-headline-sm text-on-surface">Noon.com (KSA)</h3>
+<div class="mt-4 space-y-2">
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span>Last Sync</span>
+<span class="font-data-tabular">12 mins ago</span>
+</div>
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span>SKUs Tracked</span>
+<span class="font-data-tabular">3,450</span>
+</div>
+</div>
+<button class="mt-6 w-full py-2 border border-outline-variant rounded-lg text-body-md hover:bg-surface-variant transition-colors">Configure Noon API</button>
+</div>
+<!-- Salla/Zid Placeholder (Local) -->
+<div class="glass-panel rounded-xl p-6 group border-primary/40 active-glow transition-all">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 bg-surface-container-high rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">storefront</span>
+</div>
+<span class="px-2 py-1 bg-primary/10 text-primary text-label-caps border border-primary/20 rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] animate-spin">sync</span>
+                            SYNCING
+                        </span>
+</div>
+<h3 class="font-headline-sm text-on-surface">Salla Store</h3>
+<div class="mt-4 space-y-2">
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span>Progress</span>
+<span class="font-data-tabular">92%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="h-full bg-primary w-[92%]"></div>
+</div>
+</div>
+<button class="mt-6 w-full py-2 bg-primary text-on-primary font-body-md rounded-lg hover:opacity-90 transition-opacity">View KSA Logs</button>
+</div>
+</div>
+</section>
+<!-- Lower Panel: API Management & Audit Log -->
+<section class="grid grid-cols-1 xl:grid-cols-5 gap-gutter">
+<div class="xl:col-span-2 glass-panel rounded-xl p-6 flex flex-col">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">api</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">API Management</h2>
+</div>
+<div class="space-y-6 flex-1">
+<div class="space-y-2">
+<label class="font-label-caps text-outline">KSA REGIONAL API KEY</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-2 text-data-tabular focus:ring-0 cursor-not-allowed opacity-60" readonly="" type="password" value="KSA-SYNC-928374-OS-KEY"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant hover:text-primary">content_copy</button>
+</div>
+</div>
+<div class="space-y-4">
+<label class="font-label-caps text-outline">SYNC FREQUENCY</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-2 px-3 border border-primary bg-primary/10 text-primary rounded-lg text-body-md">5 mins</button>
+<button class="py-2 px-3 border border-outline-variant text-on-surface-variant rounded-lg text-body-md hover:bg-surface-variant">15 mins</button>
+<button class="py-2 px-3 border border-outline-variant text-on-surface-variant rounded-lg text-body-md hover:bg-surface-variant">1 hour</button>
+</div>
+</div>
+<div class="p-4 bg-surface-container-high/40 rounded-lg border border-outline-variant">
+<div class="flex items-center gap-2 text-primary mb-2">
+<span class="material-symbols-outlined">info</span>
+<span class="font-label-caps">LOCALIZATION OPTIMIZATION</span>
+</div>
+<p class="text-body-md text-on-surface-variant">Syncing via Riyadh data centers is active. Estimated latencies are within optimal range for KSA market peak hours.</p>
+</div>
+</div>
+<button class="mt-8 w-full bg-primary-container text-on-primary-container py-3 rounded-lg font-body-lg font-bold hover:brightness-110 active:scale-[0.98] transition-all">Save Regional Settings</button>
+</div>
+<div class="xl:col-span-3 glass-panel rounded-xl overflow-hidden flex flex-col">
+<div class="p-6 border-b border-outline-variant flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">history</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Regional Audit Log</h2>
+</div>
+<button class="text-primary text-body-md font-semibold hover:underline">Download CSV</button>
+</div>
+<div class="flex-1 overflow-auto">
+<table class="w-full text-left border-collapse">
+<thead class="sticky top-0 bg-surface-container-high/90 backdrop-blur-md z-10">
+<tr>
+<th class="px-6 py-4 font-label-caps text-outline">TIMESTAMP</th>
+<th class="px-6 py-4 font-label-caps text-outline">ACTION</th>
+<th class="px-6 py-4 font-label-caps text-outline">SOURCE</th>
+<th class="px-6 py-4 font-label-caps text-outline">STATUS</th>
+</tr>
+</thead>
+<tbody class="text-body-md text-on-surface-variant divide-y divide-outline-variant/30">
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="px-6 py-4 font-data-tabular">2023-10-24 14:32:01</td>
+<td class="px-6 py-4 text-on-surface">Inventory Update</td>
+<td class="px-6 py-4">Amazon.sa (FBA)</td>
+<td class="px-6 py-4"><span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">check_circle</span> SUCCESS</span></td>
+</tr>
+<tr class="hover:bg-surface-container/50 transition-colors bg-white/2">
+<td class="px-6 py-4 font-data-tabular">2023-10-24 14:30:15</td>
+<td class="px-6 py-4 text-on-surface">Order Webhook</td>
+<td class="px-6 py-4">Noon KSA API</td>
+<td class="px-6 py-4"><span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">check_circle</span> SUCCESS</span></td>
+</tr>
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="px-6 py-4 font-data-tabular">2023-10-24 14:28:44</td>
+<td class="px-6 py-4 text-on-surface">Auth Token Refresh</td>
+<td class="px-6 py-4">Salla Gateway</td>
+<td class="px-6 py-4"><span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">check_circle</span> SUCCESS</span></td>
+</tr>
+<tr class="hover:bg-surface-container/50 transition-colors bg-white/2">
+<td class="px-6 py-4 font-data-tabular">2023-10-24 14:25:12</td>
+<td class="px-6 py-4 text-on-surface">Bulk Price Sync</td>
+<td class="px-6 py-4">Marketplace: Noon</td>
+<td class="px-6 py-4"><span class="text-error flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">error</span> RETRYING</span></td>
+</tr>
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="px-6 py-4 font-data-tabular">2023-10-24 14:22:01</td>
+<td class="px-6 py-4 text-on-surface">Catalog Import</td>
+<td class="px-6 py-4">Zid Store Integration</td>
+<td class="px-6 py-4"><span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">check_circle</span> SUCCESS</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</main>
+<!-- Contextual FAB -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined text-[32px]">add</span>
+</button>
+<script>
+        setInterval(() => {
+            const bars = document.querySelectorAll('.bg-primary, .bg-secondary');
+            bars.forEach(bar => {
+                if(Math.random() > 0.7) {
+                    const currentH = parseInt(bar.style.height) || 90;
+                    const jitter = Math.floor(Math.random() * 4) - 2;
+                    bar.style.height = `${Math.min(Math.max(currentH + jitter, 75), 100)}%`;
+                }
+            });
+        }, 3000);
+    </script>
+</body></html>
